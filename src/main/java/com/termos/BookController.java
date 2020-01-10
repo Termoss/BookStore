@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Date;
+
 @RestController
 public class BookController {
 
@@ -47,7 +49,7 @@ public class BookController {
             try {
                 connection = DatabaseManager.connectToDatabase();
 
-                String sql = String.format("INSERT INTO books(id, name, author, book release day , price ) VALUES('123', 'LOTR', 'JRR Tolkien', '1954', 'Fantasy', '101');",
+                String sql = String.format("INSERT INTO books(id, name, author,releaseday , price ) VALUES('123', 'LOTR', 'JRR Tolkien', '1954', 'Fantasy', '101');",
                         book.getId(),book.getTitle(),book.getAuthor(),book.getReleaseday(),book.getDescription(),book.getPrice());
 
                 connection.prepareStatement(sql).execute();
@@ -77,4 +79,4 @@ public class BookController {
 
     }
 
-}
+

@@ -3,11 +3,10 @@ package com.termos;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
+import java.util.Date;
 
 
-
-    @Entity
+@Entity
     public class Book {
 
         @Id
@@ -41,11 +40,11 @@ import java.time.LocalDate;
             this.author = author;
         }
 
-        public LocalDate getReleaseday() {
+        public Date getReleaseday() {
             return releaseday;
         }
 
-        public void setReleaseday(LocalDate releaseday) {
+        public void setReleaseday(Date releaseday) {
             this.releaseday = releaseday;
         }
 
@@ -65,10 +64,10 @@ import java.time.LocalDate;
             this.description = description;
         }
 
-        private LocalDate releaseday;
+        private Date releaseday;
         private double price;
 
-        public Book(long id, String title, String author, LocalDate releaseday, double price, String description) {
+        public Book(long id, String title, String author, Date releaseday, double price, String description) {
             this.id = id;
             this.title = title;
             this.author = author;
