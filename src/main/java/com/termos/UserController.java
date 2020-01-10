@@ -39,7 +39,7 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(id, imie, nazwisko, mail ) VALUES('123', '%s', '%s', 'dawidos@wp.pl');",
+            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '');",
                     user.getName(), user.getSurName());
 
             connection.prepareStatement(sql).execute();
@@ -52,11 +52,15 @@ public class UserController {
     }
 
     private User mapUser(ResultSet rs) throws SQLException {
-        return new User(rs.getInt("id"),
-                rs.getString("imie"),
-                rs.getString("nazwisko"),
-                rs.getString("sex"),
-                rs.getInt("age"));
+        return new User(rs.getInt("user_id"),
+                rs.getString("firstname"),
+                rs.getString("secondname"),
+                rs.getString("city"),
+                rs.getInt("tel"),
+                rs.getDate("date_add"),
+                rs.getString("login"),
+                rs.getString("pass"),
+                rs.getString("email"));
     }
 
 }

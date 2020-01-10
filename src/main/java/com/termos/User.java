@@ -1,6 +1,8 @@
 package com.termos;
 
 
+import java.sql.Date;
+
 public class User {
 
     private int id;
@@ -9,7 +11,7 @@ public class User {
     private String sex;
     private int age;
 
-    public User(int id, String name, String surName, String sex, int age) {
+    public User(int id, String name, String surName, String sex, int age, Date date_add, String login, String pass, String email) {
         this.id = id;
         this.name = name;
         this.surName = surName;
