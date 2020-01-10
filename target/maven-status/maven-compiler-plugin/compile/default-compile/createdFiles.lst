@@ -1,0 +1,9 @@
+com\termos\BookController.class
+com\termos\BookRepository.class
+com\termos\User.class
+com\termos\DatabaseManager.class
+com\termos\StartBookApplication.class
+com\termos\OrderRepository.class
+com\termos\Order.class
+com\termos\Book.class
+com\termos\UserController.class

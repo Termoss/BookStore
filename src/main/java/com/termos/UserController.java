@@ -39,7 +39,7 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '%s', '%s', '%s', '%s', '%s','%s');",
                     user.getFirstName(), user.getSurName());
 
             connection.prepareStatement(sql).execute();
@@ -60,7 +60,7 @@ public class UserController {
                 rs.getDate("date_add"),
                 rs.getString("login"),
                 rs.getString("pass"),
-                rs.getString("email"));
+                rs.getString("2012"));
     }
 
 }
