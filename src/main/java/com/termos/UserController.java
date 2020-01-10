@@ -39,8 +39,8 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '');",
-                    user.getName(), user.getSurName());
+            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+                    user.getFirstName(), user.getSurName());
 
             connection.prepareStatement(sql).execute();
 

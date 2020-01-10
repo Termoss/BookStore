@@ -11,12 +11,6 @@ import java.util.Date;
 @RestController
 public class BookController {
 
-    private final BookRepository bookRepository;
-
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
     // Find
         @GetMapping("/books")
         List<Book> findAll() {
@@ -36,11 +30,6 @@ public class BookController {
             return list;
         }
 
-        //find by name
-        @GetMapping("books/{name}")
-       public List<Book> getBookByTitle(@PathVariable String bookname){
-        return bookRepository.findByName(bookname);
-    }
 
         //post book
         @PostMapping("/books")
