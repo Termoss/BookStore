@@ -17,7 +17,7 @@ public class UserController {
 
     // Find
     @GetMapping("/users")
-    List<User> findAll() {
+    List<User> findAll()  {
         List<User> list = List.of();
         try {
             Connection connection = DatabaseManager.connectToDatabase();
@@ -39,8 +39,8 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(user_id, firstname, secondname, city, tel, date_add, login, pass, email ) VALUES('123', '%s', '%s', '%s', '%s', '%s', '%s', '%s','%s');",
-                    user.getFirstName(), user.getSurName());
+            String sql = String.format("INSERT INTO users(user_id, fname, sur_n, city, user_tel, date_add, login, pass, email) VALUES(%d, '%s','%s', '%s',%d, '%s', '%s', '%s', '%s');",
+                    user.getUser_id(),user.getName(),user.getSurN(),user.getCity(),user.getUser_tel(),user.getDate_add(),user.getLogin(),user.getPass(),user.getEmail());
 
             connection.prepareStatement(sql).execute();
 
@@ -48,19 +48,20 @@ public class UserController {
             e.printStackTrace();
         }
 
+
         return null;
     }
 
     private User mapUser(ResultSet rs) throws SQLException {
         return new User(rs.getInt("user_id"),
-                rs.getString("firstname"),
-                rs.getString("secondname"),
+                rs.getString("fname"),
+                rs.getString("sur_n"),
                 rs.getString("city"),
-                rs.getInt("tel"),
-                rs.getDate("date_add"),
+                rs.getInt("user_tel"),
+                rs.getString("date_add"),
                 rs.getString("login"),
                 rs.getString("pass"),
-                rs.getString("2012"));
+                rs.getString("email"));
     }
 
 }

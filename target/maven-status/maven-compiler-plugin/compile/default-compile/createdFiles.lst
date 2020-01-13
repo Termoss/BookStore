@@ -1,5 +1,4 @@
 com\termos\BookController.class
-com\termos\BookRepository.class
 com\termos\User.class
 com\termos\DatabaseManager.class
 com\termos\StartBookApplication.class
