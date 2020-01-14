@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4429b5fa-604b-4c3f-8623-6f084e755859" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/termos-bookstore.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/DatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/OrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/StartBookApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/StartBookApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
@@ -179,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578694911669</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2">
+      <created>1578953887035</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1578953887035</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,11 +221,11 @@
     </state>
     <state x="552" y="211" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1578691852646" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577375807067" />
-    <state x="524" y="114" key="CommitChangelistDialog2" timestamp="1578953873486">
+    <state x="524" y="114" key="CommitChangelistDialog2" timestamp="1578953911145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="419" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578694910878" />
-    <state x="524" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578953873486" />
+    <state x="524" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578953911145" />
     <state width="418" height="466" key="DebuggerActiveHint" timestamp="1577378238709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -245,26 +246,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="338" y="416" width="260" height="214" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578511192644" />
-    <state width="1877" height="602" key="GridCell.Tab.0.bottom" timestamp="1578953873511">
+    <state width="1877" height="602" key="GridCell.Tab.0.bottom" timestamp="1578954036710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="468" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="602" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578953873511" />
-    <state width="1877" height="602" key="GridCell.Tab.0.center" timestamp="1578953873511">
+    <state width="1877" height="602" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578954036710" />
+    <state width="1877" height="602" key="GridCell.Tab.0.center" timestamp="1578954036710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="468" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="602" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578953873511" />
-    <state width="1877" height="602" key="GridCell.Tab.0.left" timestamp="1578953873510">
+    <state width="1877" height="602" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578954036710" />
+    <state width="1877" height="602" key="GridCell.Tab.0.left" timestamp="1578954036709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="468" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578697392229" />
-    <state width="1877" height="602" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578953873510" />
-    <state width="1877" height="602" key="GridCell.Tab.0.right" timestamp="1578953873511">
+    <state width="1877" height="602" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578954036709" />
+    <state width="1877" height="602" key="GridCell.Tab.0.right" timestamp="1578954036710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="468" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="602" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578953873511" />
+    <state width="1877" height="602" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578954036710" />
     <state width="494" height="183" key="GridCell.Tab.1.bottom" timestamp="1578611605760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -285,20 +286,20 @@
     </state>
     <state width="494" height="183" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578611605760" />
     <state width="1877" height="247" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577380574123" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1578953526931">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1578953992470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578953526931" />
-    <state x="70" y="203" key="Vcs.Push.Dialog.v2" timestamp="1578692167829">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578953992470" />
+    <state x="87" y="256" key="Vcs.Push.Dialog.v2" timestamp="1578954016114">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="70" y="203" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578692167829" />
-    <state x="87" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578510675411" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1578860709895">
+    <state x="87" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578954016114" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579024800172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="525" y="272" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578697483450" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578860709895" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579024800172" />
     <state x="231" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578689824748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
