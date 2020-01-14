@@ -39,8 +39,8 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(user_id, fname, sur_n, city, user_tel, date_add, login, pass, email) VALUES(%d, '%s','%s', '%s',%d, '%s', '%s', '%s', '%s');",
-                    user.getUser_id(),user.getName(),user.getSurN(),user.getCity(),user.getUser_tel(),user.getDate_add(),user.getLogin(),user.getPass(),user.getEmail());
+            String sql = String.format("INSERT INTO users(id, city, user_tel, date_add, login, pass, email) VALUES(%d,'%s',%d, '%s', '%s', '%s', '%s');",
+                    user.getId(),user.getCity(),user.getUser_tel(),user.getDate_add(),user.getLogin(),user.getPass(),user.getEmail());
 
             connection.prepareStatement(sql).execute();
 
@@ -53,9 +53,7 @@ public class UserController {
     }
 
     private User mapUser(ResultSet rs) throws SQLException {
-        return new User(rs.getInt("user_id"),
-                rs.getString("fname"),
-                rs.getString("sur_n"),
+        return new User(rs.getInt("id"),
                 rs.getString("city"),
                 rs.getInt("user_tel"),
                 rs.getString("date_add"),

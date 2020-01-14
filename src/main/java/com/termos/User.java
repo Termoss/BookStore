@@ -1,14 +1,16 @@
 package com.termos;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
 
 public class User {
-    @Id
-    private int user_id;
-    private String name;
-    private String surN;
+    private int id;
     private String city;
     private int user_tel;
     private String date_add;
@@ -16,40 +18,12 @@ public class User {
     private String pass;
     private String email;
 
-    public User(int user_id, String name, String surN, String city, int user_tel, String date_add, String login, String pass, String email) {
-        this.user_id = user_id;
-        this.name = name;
-        this.surN = surN;
-        this.city = city;
-        this.user_tel = user_tel;
-        this.date_add = date_add;
-        this.login = login;
-        this.pass = pass;
-        this.email = email;
+    public int getId() {
+        return id;
     }
 
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurN() {
-        return surN;
-    }
-
-    public void setSurN(String surN) {
-        this.surN = surN;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCity() {
@@ -103,9 +77,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
-                ", name='" + name + '\'' +
-                ", surN='" + surN + '\'' +
+                "id=" + id +
                 ", city='" + city + '\'' +
                 ", user_tel=" + user_tel +
                 ", date_add='" + date_add + '\'' +
@@ -113,5 +85,16 @@ public class User {
                 ", pass='" + pass + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public User(int id, String city, int user_tel, String date_add, String login, String pass, String email) {
+        this.id = id;
+        this.city = city;
+        this.user_tel = user_tel;
+        this.date_add = date_add;
+        this.login = login;
+        this.pass = pass;
+        this.email = email;
+
     }
 }
