@@ -10,19 +10,33 @@ import javax.persistence.Id;
 import java.sql.Date;
 
 public class User {
-    private int id;
+    private String id;
     private String city;
+    private String fname;
+    private String sname;
     private int user_tel;
     private String date_add;
     private String login;
     private String pass;
     private String email;
 
-    public int getId() {
+    public User(String id, String city, String fname, String sname, int user_tel, String date_add, String login, String pass, String email) {
+        this.id = id;
+        this.city = city;
+        this.fname = fname;
+        this.sname = sname;
+        this.user_tel = user_tel;
+        this.date_add = date_add;
+        this.login = login;
+        this.pass = pass;
+        this.email = email;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -32,6 +46,22 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getSname() {
+        return sname;
+    }
+
+    public void setSname(String sname) {
+        this.sname = sname;
     }
 
     public int getUser_tel() {
@@ -77,24 +107,15 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", city='" + city + '\'' +
+                ", fname='" + fname + '\'' +
+                ", sname='" + sname + '\'' +
                 ", user_tel=" + user_tel +
                 ", date_add='" + date_add + '\'' +
                 ", login='" + login + '\'' +
                 ", pass='" + pass + '\'' +
                 ", email='" + email + '\'' +
                 '}';
-    }
-
-    public User(int id, String city, int user_tel, String date_add, String login, String pass, String email) {
-        this.id = id;
-        this.city = city;
-        this.user_tel = user_tel;
-        this.date_add = date_add;
-        this.login = login;
-        this.pass = pass;
-        this.email = email;
-
     }
 }
