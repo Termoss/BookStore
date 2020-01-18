@@ -55,7 +55,6 @@ public class UserController {
                     UUID.randomUUID().toString(),user.getCity(),user.getFname(),user.getSname(),user.getUser_tel(),user.getDate_add(),user.getLogin(),user.getPass(),user.getEmail());
             System.out.println(sql);
             connection.prepareStatement(sql).execute();
-            System.out.println("231321ssssssssssssssssssssssssss"+ sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
