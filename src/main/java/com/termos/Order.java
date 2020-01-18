@@ -2,60 +2,80 @@ package com.termos;
 
 import java.time.LocalDate;
 
-public class Order {
-    private int orderid;
-    private LocalDate orderdate;
-    private char status;
-    private double  price;
-    private boolean invoice;
+public class Order{
+    private String order_id;
+    private String order_date;
+    private int quantity;
+    private int  price;
+    private String status;
+    private String invoice;
 
-
-    public Order(int orderid, LocalDate orderdate, char status, double price, boolean invoice) {
-        this.orderid = orderid;
-        this.orderdate = orderdate;
-        this.status = status;
+    public Order(String order_id, String order_date, int quantity, int price, String status, String invoice) {
+        this.order_id = order_id;
+        this.order_date = order_date;
+        this.quantity = quantity;
         this.price = price;
+        this.status = status;
         this.invoice = invoice;
     }
 
-
-    public int getOrderid() {
-        return orderid;
+    public String getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderid(int orderid) {
-        this.orderid = orderid;
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;
     }
 
-    public LocalDate getOrderdate() {
-        return orderdate;
+    public String getOrder_date() {
+        return order_date;
     }
 
-    public void setOrderdate(LocalDate orderdate) {
-        this.orderdate = orderdate;
+    public void setOrder_date(String order_date) {
+        this.order_date = order_date;
     }
 
-    public char getStatus() {
-        return status;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setStatus(char status) {
-        this.status = status;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public boolean isInvoice() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getInvoice() {
         return invoice;
     }
 
-    public void setInvoice(boolean invoice) {
+    public void setInvoice(String invoice) {
         this.invoice = invoice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "order_id='" + order_id + '\'' +
+                ", order_date='" + order_date + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", status='" + status + '\'' +
+                ", invoice='" + invoice + '\'' +
+                '}';
     }
 }
