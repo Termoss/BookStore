@@ -44,6 +44,8 @@ public class UserController {
 
         return null;
     }
+
+    //komentarz 1
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
         Connection connection = null;
