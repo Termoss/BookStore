@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4429b5fa-604b-4c3f-8623-6f084e755859" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579351255720</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dodanie data.sql">
+      <created>1579424179225</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1579424179225</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +240,8 @@
     <MESSAGE value="Pierwszy Commit" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="Dodanie data.sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodanie data.sql" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579025323075">
@@ -264,12 +271,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579291202110" />
-    <state x="524" y="59" key="CommitChangelistDialog2" timestamp="1579351255176">
+    <state x="524" y="59" key="CommitChangelistDialog2" timestamp="1579424178373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1396" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579119863817" />
     <state x="419" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578694910878" />
-    <state x="524" y="59" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579351255176" />
+    <state x="524" y="59" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579424178373" />
     <state width="418" height="466" key="DebuggerActiveHint" timestamp="1577378238709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
