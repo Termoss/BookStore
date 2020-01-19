@@ -1,17 +1,3 @@
--- Database: termos_store
-
--- DROP DATABASE termos_store;
-
-CREATE DATABASE termos_store
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'Polish_Poland.1250'
-    LC_CTYPE = 'Polish_Poland.1250'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-
-drop table if exists users;
 
 CREATE TABLE users
 (
