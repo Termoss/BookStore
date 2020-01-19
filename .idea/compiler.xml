@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="termos-bookstore" target="11" />
+      <module name="termos-bookstore" target="9" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
