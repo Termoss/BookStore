@@ -3,36 +3,36 @@ package com.termos;
 import java.time.LocalDate;
 
 public class Order{
-    private String order_id;
-    private String order_date;
+    private String orderID;
+    private String orderDate;
     private int quantity;
     private int  price;
     private String status;
     private String invoice;
 
-    public Order(String order_id, String order_date, int quantity, int price, String status, String invoice) {
-        this.order_id = order_id;
-        this.order_date = order_date;
+    public Order(String orderID, String orderDate, int quantity, int price, String status, String invoice) {
+        this.orderID = orderID;
+        this.orderDate = orderDate;
         this.quantity = quantity;
         this.price = price;
         this.status = status;
         this.invoice = invoice;
     }
 
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderID() {
+        return orderID;
     }
 
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
     public int getQuantity() {
@@ -70,8 +70,8 @@ public class Order{
     @Override
     public String toString() {
         return "Order{" +
-                "order_id='" + order_id + '\'' +
-                ", order_date='" + order_date + '\'' +
+                "orderID='" + orderID + '\'' +
+                ", orderDate='" + orderDate + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", status='" + status + '\'' +

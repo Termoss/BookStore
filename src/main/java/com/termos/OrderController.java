@@ -50,7 +50,7 @@ public class OrderController {
             connection = DatabaseManager.connectToDatabase();
 
             String sql = String.format("INSERT INTO orders(order_id, order_date, quantity, price, status, invoice) VALUES(%s,'%s',%d, '%d', '%s', '%s');",
-                    UUID.randomUUID().toString() ,orders.getOrder_date(),orders.getQuantity(),orders.getPrice(),orders.getStatus(),orders.getInvoice());
+                    UUID.randomUUID().toString() ,orders.getOrderDate(),orders.getQuantity(),orders.getPrice(),orders.getStatus(),orders.getInvoice());
 
             connection.prepareStatement(sql).execute();
 

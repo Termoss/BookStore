@@ -1,33 +1,36 @@
 package com.termos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
 public class Book {
-    private String bookid;
+    private String bookId;
     private String title;
     private String author;
-    private int price;
+    private double price;
     private String description;
-    private String rdate;
+    @JsonProperty("rdate")
+    private String rDate;
 
-    public Book(String bookid, String title, String author, int price, String description, String rdate) {
-        this.bookid = bookid;
+    public Book(String bookId, String title, String author, double price, String description, String rDate) {
+        this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.price = price;
         this.description = description;
-        this.rdate = rdate;
+        this.rDate = rDate;
     }
 
-    public String getBookid() {
-        return bookid;
+    public String getBookId() {
+        return bookId;
     }
 
-    public void setBookid(String bookid) {
-        this.bookid = bookid;
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     public String getTitle() {
@@ -46,11 +49,11 @@ public class Book {
         this.author = author;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -62,23 +65,23 @@ public class Book {
         this.description = description;
     }
 
-    public String getRdate() {
-        return rdate;
+    public String getrDate() {
+        return rDate;
     }
 
-    public void setRdate(String rdate) {
-        this.rdate = rdate;
+    public void setrDate(String rDate) {
+        this.rDate = rDate;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "bookid='" + bookid + '\'' +
+                "bookId='" + bookId + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
-                ", rdate='" + rdate + '\'' +
+                ", rDate='" + rDate + '\'' +
                 '}';
     }
 }

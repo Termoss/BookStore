@@ -2,9 +2,8 @@ package com.termos;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -53,10 +52,20 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email) VALUES('%s','%s' ,'%s','%s',%d, '%s', '%s', '%s', '%s');",
-                    UUID.randomUUID().toString(),user.getCity(),user.getFname(),user.getSname(),user.getUser_tel(),user.getDate_add(),user.getLogin(),user.getPass(),user.getEmail());
+            String sql = "INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email) VALUES(?,?,?,?,?,?,?,?,?);";
+                    PreparedStatement preparedStatement =
+                            connection.prepareStatement(sql);
+            preparedStatement.setString(1, UUID.randomUUID().toString());
+            preparedStatement.setString(2, user.getCity());
+            preparedStatement.setString(3, user.getFirstName());
+            preparedStatement.setString(4, user.getSurnName());
+            preparedStatement.setInt(5, user.getUserTel());
+            preparedStatement.setTimestamp(6, user.getRegDate());
+            preparedStatement.setString(7, user.getLogin());
+            preparedStatement.setString(8, user.getPass());
+            preparedStatement.setString(9, user.getEmail());
             System.out.println(sql);
-            connection.prepareStatement(sql).execute();
+            int rowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -71,7 +80,7 @@ public class UserController {
                 rs.getString("fname"),
                 rs.getString("sname"),
                 rs.getInt("user_tel"),
-                rs.getString("date_add"),
+                rs.getTimestamp("date_add"),
                 rs.getString("login"),
                 rs.getString("pass"),
                 rs.getString("email"));

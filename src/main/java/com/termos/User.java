@@ -3,41 +3,42 @@ package com.termos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class User {
-    private String id;
+    private String userId;
     private String city;
-    private String fname;
-    private String sname;
-    private int user_tel;
-    private String date_add;
+    @JsonProperty("firstname")
+    private String firstName;
+    @JsonProperty("surnname")
+    private String surnName;
+    @JsonProperty("usertel")
+    private int userTel;
+    @JsonProperty("addDate")
+    private Timestamp regDate;
     private String login;
     private String pass;
     private String email;
 
-    public User(String id, String city, String fname, String sname, int user_tel, String date_add, String login, String pass, String email) {
-        this.id = id;
+    public User(String userId, String city, String firstName, String surnName, int userTel, Timestamp regDate, String login, String pass, String email) {
+        this.userId = userId;
         this.city = city;
-        this.fname = fname;
-        this.sname = sname;
-        this.user_tel = user_tel;
-        this.date_add = date_add;
+        this.firstName = firstName;
+        this.surnName = surnName;
+        this.userTel = userTel;
+        this.regDate = regDate;
         this.login = login;
         this.pass = pass;
         this.email = email;
     }
 
-    public String getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getCity() {
@@ -48,36 +49,38 @@ public class User {
         this.city = city;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSname() {
-        return sname;
+    public String getSurnName() {
+        return surnName;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setSurnName(String surnName) {
+        this.surnName = surnName;
     }
 
-    public int getUser_tel() {
-        return user_tel;
+    public int getUserTel() {
+        return userTel;
     }
 
-    public void setUser_tel(int user_tel) {
-        this.user_tel = user_tel;
+    public void setUserTel(int userTel) {
+        this.userTel = userTel;
     }
 
-    public String getDate_add() {
-        return date_add;
+    public Timestamp getRegDate() {
+        LocalDateTime ldt = LocalDateTime.now();
+        Timestamp t = Timestamp.valueOf(ldt);
+        return t;
     }
 
-    public void setDate_add(String date_add) {
-        this.date_add = date_add;
+    public void setRegDate(Timestamp regDate) {
+        this.regDate = regDate;
     }
 
     public String getLogin() {
@@ -107,12 +110,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
+                "userId='" + userId + '\'' +
                 ", city='" + city + '\'' +
-                ", fname='" + fname + '\'' +
-                ", sname='" + sname + '\'' +
-                ", user_tel=" + user_tel +
-                ", date_add='" + date_add + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surnName='" + surnName + '\'' +
+                ", userTel=" + userTel +
+                ", regDate=" + regDate +
                 ", login='" + login + '\'' +
                 ", pass='" + pass + '\'' +
                 ", email='" + email + '\'' +

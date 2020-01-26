@@ -3,6 +3,7 @@ package com.termos;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,8 +14,7 @@ import java.util.UUID;
 @RestController
 public class BookController {
 
-    // Find
-    // Find
+
     @GetMapping("/books")
     List<Book> findAll()  {
         List<Book> list = new ArrayList<>();
@@ -47,15 +47,25 @@ public class BookController {
     }
     @PostMapping("/books")
     public Book createUser(@RequestBody Book book) {
+
+
+
         Connection connection = null;
 
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = String.format("INSERT INTO books(book_id, title, author,  price, description, rdate) VALUES('%s','%s','%s','%d','%s','%s');",
-                    UUID.randomUUID().toString(),book.getTitle(),book.getAuthor(),book.getPrice(),book.getDescription(),book.getRdate());
-            connection.prepareStatement(sql).execute();
+            String sql = "INSERT INTO books(book_id, title, author,  price, description, rdate) VALUES(?,?,?,?,?,?);";
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement(sql);
+            preparedStatement.setString(1, UUID.randomUUID().toString());
+            preparedStatement.setString(2, book.getTitle());
+            preparedStatement.setString(3, book.getAuthor());
+            preparedStatement.setDouble(4, book.getPrice());
+            preparedStatement.setString(5, book.getDescription());
+            preparedStatement.setString(6, book.getrDate());
             System.out.println(sql);
+            int rowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
