@@ -1,16 +1,21 @@
-package com.termos;
+package com.termos.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Order{
+    @JsonProperty("orderid")
     private String orderID;
-    private String orderDate;
+    @JsonProperty("orderdate")
+    private Timestamp orderDate;
     private int quantity;
-    private int  price;
+    private double  price;
     private String status;
     private String invoice;
 
-    public Order(String orderID, String orderDate, int quantity, int price, String status, String invoice) {
+    public Order(String orderID, Timestamp orderDate, int quantity, double price, String status, String invoice) {
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.quantity = quantity;
@@ -27,11 +32,11 @@ public class Order{
         this.orderID = orderID;
     }
 
-    public String getOrderDate() {
+    public Timestamp getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
     }
 
@@ -43,11 +48,11 @@ public class Order{
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -71,7 +76,7 @@ public class Order{
     public String toString() {
         return "Order{" +
                 "orderID='" + orderID + '\'' +
-                ", orderDate='" + orderDate + '\'' +
+                ", orderDate=" + orderDate +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", status='" + status + '\'' +

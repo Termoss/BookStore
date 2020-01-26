@@ -1,4 +1,4 @@
-package com.termos;
+package com.termos.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,8 +20,9 @@ public class User {
     private String login;
     private String pass;
     private String email;
+    private String authorities;
 
-    public User(String userId, String city, String firstName, String surnName, int userTel, Timestamp regDate, String login, String pass, String email) {
+    public User(String userId, String city, String firstName, String surnName, int userTel, Timestamp regDate, String login, String pass, String email, String authorities) {
         this.userId = userId;
         this.city = city;
         this.firstName = firstName;
@@ -31,6 +32,7 @@ public class User {
         this.login = login;
         this.pass = pass;
         this.email = email;
+        this.authorities = authorities;
     }
 
     public String getUserId() {
@@ -74,9 +76,7 @@ public class User {
     }
 
     public Timestamp getRegDate() {
-        LocalDateTime ldt = LocalDateTime.now();
-        Timestamp t = Timestamp.valueOf(ldt);
-        return t;
+        return regDate;
     }
 
     public void setRegDate(Timestamp regDate) {
@@ -107,6 +107,14 @@ public class User {
         this.email = email;
     }
 
+    public String getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -119,6 +127,7 @@ public class User {
                 ", login='" + login + '\'' +
                 ", pass='" + pass + '\'' +
                 ", email='" + email + '\'' +
+                ", authorities='" + authorities + '\'' +
                 '}';
     }
 }

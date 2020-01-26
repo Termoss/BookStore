@@ -8,7 +8,6 @@ public class StartBookApplication {
 
     // start everything
     public static void main(String[] args) {
-        System.out.println();
         SpringApplication.run(StartBookApplication.class, args);
     }
 

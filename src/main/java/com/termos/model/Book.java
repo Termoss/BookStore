@@ -1,4 +1,4 @@
-package com.termos;
+package com.termos.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

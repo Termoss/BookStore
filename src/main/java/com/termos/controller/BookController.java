@@ -1,5 +1,7 @@
-package com.termos;
+package com.termos.controller;
 
+import com.termos.repository.DatabaseManager;
+import com.termos.model.Book;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
@@ -8,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
 import java.util.UUID;
 
 @RestController
@@ -48,8 +49,6 @@ public class BookController {
     @PostMapping("/books")
     public Book createUser(@RequestBody Book book) {
 
-
-
         Connection connection = null;
 
         try {
@@ -64,8 +63,8 @@ public class BookController {
             preparedStatement.setDouble(4, book.getPrice());
             preparedStatement.setString(5, book.getDescription());
             preparedStatement.setString(6, book.getrDate());
-            System.out.println(sql);
             int rowsAffected = preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package com.termos;
+package com.termos.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

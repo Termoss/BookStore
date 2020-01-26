@@ -1,5 +1,8 @@
-package com.termos;
+package com.termos.controller;
 
+import com.termos.TimeUtils;
+import com.termos.repository.DatabaseManager;
+import com.termos.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.*;
@@ -44,7 +47,7 @@ public class UserController {
         return null;
     }
 
-    //komentarz 1
+
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
         Connection connection = null;
@@ -52,7 +55,7 @@ public class UserController {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = "INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email) VALUES(?,?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email,authorities) VALUES(?,?,?,?,?,?,?,?,?,?);";
                     PreparedStatement preparedStatement =
                             connection.prepareStatement(sql);
             preparedStatement.setString(1, UUID.randomUUID().toString());
@@ -60,11 +63,12 @@ public class UserController {
             preparedStatement.setString(3, user.getFirstName());
             preparedStatement.setString(4, user.getSurnName());
             preparedStatement.setInt(5, user.getUserTel());
-            preparedStatement.setTimestamp(6, user.getRegDate());
+            preparedStatement.setTimestamp(6, TimeUtils.NowTimeStamp());
             preparedStatement.setString(7, user.getLogin());
             preparedStatement.setString(8, user.getPass());
             preparedStatement.setString(9, user.getEmail());
-            System.out.println(sql);
+            preparedStatement.setString(10, user.getAuthorities());
+
             int rowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +87,8 @@ public class UserController {
                 rs.getTimestamp("date_add"),
                 rs.getString("login"),
                 rs.getString("pass"),
-                rs.getString("email"));
+                rs.getString("email"),
+                rs.getString("authorities"));
     }
 
 }
