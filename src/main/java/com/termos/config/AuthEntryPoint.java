@@ -33,4 +33,3 @@ public class AuthEntryPoint extends BasicAuthenticationEntryPoint {
     }
 
 }
-
