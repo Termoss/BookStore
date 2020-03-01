@@ -1,6 +1,7 @@
 package com.termos.controller;
 
 import com.termos.TimeUtils;
+import com.termos.model.Book;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.User;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class UserController {
 
     // Find
     @GetMapping("/users")
-    List<User> findAll()  {
+    List<User> findAllUsers()  {
         List<User> list = new ArrayList<>();
         try {
             Connection connection = DatabaseManager.connectToDatabase();
@@ -33,12 +34,14 @@ public class UserController {
         return list;
     }
     @GetMapping("/users/{id}")
-    User findA(@PathVariable String id) {
+    User findUser(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            ResultSet rs = connection.prepareStatement("select * from users where id='"+id+"'").executeQuery();
-            rs.next();
-            return mapUser(rs);
+            String sql="select * from users where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,7 +50,7 @@ public class UserController {
         return null;
     }
 
-    //create
+
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
         Connection connection = null;
@@ -77,7 +80,6 @@ public class UserController {
 
         return null;
     }
-    //update
     @PutMapping("/user/{id}")
     User updateUser(@PathVariable String id, @RequestBody User user) {
         try {
@@ -96,14 +98,15 @@ public class UserController {
             preparedStatement1.setString(9, user.getAuthorities());
             preparedStatement1.setString(10,id);
             int rowsAffected = preparedStatement1.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return null;
     }
-    //delete
     @DeleteMapping("/user/{id}")
-    User deleteUser(@PathVariable String id) {
+    Book deleteBook(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
             String sql = "DELETE from user where id=?";
@@ -115,9 +118,9 @@ public class UserController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return null;
     }
-
     private User mapUser(ResultSet rs) throws SQLException {
         return new User(rs.getString("id"),
                 rs.getString("city"),
