@@ -1,6 +1,8 @@
 package com.termos.controller;
 
 import com.termos.TimeUtils;
+import com.termos.model.Book;
+import com.termos.model.User;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.Order;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +20,7 @@ public class OrderController {
 
     // Find
     @GetMapping("/orders")
-    List<Order> findAll() {
+    List<Order> findOrders() {
         List<Order> list = new ArrayList<>();
         try {
             Connection connection = DatabaseManager.connectToDatabase();
@@ -35,12 +37,15 @@ public class OrderController {
     }
 
     @GetMapping("/orders/{id}")
-    Order findA(@PathVariable String id) {
+    Order findOrder(@PathVariable String id) {
+
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            ResultSet rs = connection.prepareStatement("select * from orders where order_id='" + id + "'").executeQuery();
-            rs.next();
-            return mapOrder(rs);
+            String sql = "select * from orders where order_id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1,id);
+            int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,7 +55,7 @@ public class OrderController {
     }
 
     @PostMapping("/orders")
-    public Order createOrders(@RequestBody Order orders) {
+    public Order createOrder(@RequestBody Order orders) {
         Connection connection = null;
         try {
             connection = DatabaseManager.connectToDatabase();
@@ -71,6 +76,42 @@ public class OrderController {
             e.printStackTrace();
         }
 
+
+        return null;
+    }
+    @PutMapping("/orders/{id}")
+    Order updateOrder(@PathVariable String id, @RequestBody Order orders) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql = "update  order set  quantity=?, price=?, status=?, invoice=? where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setInt(1, orders.getQuantity());
+            preparedStatement1.setDouble(2, orders.getPrice());
+            preparedStatement1.setString(3, orders.getStatus());
+            preparedStatement1.setString(4, orders.getInvoice());
+            preparedStatement1.setString(5,id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    @DeleteMapping("/order/{id}")
+    Order deleteOrder(@PathVariable String id) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql = "DELETE from order where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
