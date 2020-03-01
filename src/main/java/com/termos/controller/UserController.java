@@ -47,7 +47,7 @@ public class UserController {
         return null;
     }
 
-
+    //create
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
         Connection connection = null;
@@ -75,6 +75,46 @@ public class UserController {
         }
 
 
+        return null;
+    }
+    //update
+    @PutMapping("/user/{id}")
+    User updateUser(@PathVariable String id, @RequestBody User user) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql =  "update  user set city=?, fname=?, sname=?, user_tel=?, date_add=?, login=?, pass=?, email=?,authorities=? where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, user.getCity());
+            preparedStatement1.setString(2, user.getFirstName());
+            preparedStatement1.setString(3, user.getSurnName());
+            preparedStatement1.setInt(4, user.getUserTel());
+            preparedStatement1.setTimestamp(5, TimeUtils.NowTimeStamp());
+            preparedStatement1.setString(6, user.getLogin());
+            preparedStatement1.setString(7, user.getPass());
+            preparedStatement1.setString(8, user.getEmail());
+            preparedStatement1.setString(9, user.getAuthorities());
+            preparedStatement1.setString(10,id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    //delete
+    @DeleteMapping("/user/{id}")
+    User deleteUser(@PathVariable String id) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql = "DELETE from user where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

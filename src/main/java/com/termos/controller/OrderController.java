@@ -1,6 +1,7 @@
 package com.termos.controller;
 
 import com.termos.TimeUtils;
+import com.termos.model.Book;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.Order;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public class OrderController {
 
         return list;
     }
-
+    //findAll
     @GetMapping("/orders/{id}")
     Order findA(@PathVariable String id) {
         try {
@@ -48,7 +49,7 @@ public class OrderController {
 
         return null;
     }
-
+    //create
     @PostMapping("/orders")
     public Order createOrders(@RequestBody Order orders) {
         Connection connection = null;
@@ -75,7 +76,45 @@ public class OrderController {
         return null;
     }
 
-    private Order mapOrder(ResultSet rst) throws SQLException {
+   //update
+    @PutMapping("/orders/{id}")
+    Book updateOrder(@PathVariable String id, @RequestBody Order orders) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql = "update  order set  quantity=?, price=?, status=?, invoice=? where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setInt(1, orders.getQuantity());
+            preparedStatement1.setDouble(2, orders.getPrice());
+            preparedStatement1.setString(3, orders.getStatus());
+            preparedStatement1.setString(4, orders.getInvoice());
+            preparedStatement1.setString(5,id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    //delete
+    @DeleteMapping("/order/{id}")
+    Book deleteBook(@PathVariable String id) {
+        try {
+            Connection connection = DatabaseManager.connectToDatabase();
+            String sql = "DELETE from order where id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+        private Order mapOrder(ResultSet rst) throws SQLException {
         return new Order(rst.getString("order_id"),
                 rst.getTimestamp("order_date"),
                 rst.getInt("quantity"),
