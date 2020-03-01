@@ -82,7 +82,7 @@ public class UserController {
     User updateUser(@PathVariable String id, @RequestBody User user) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            String sql =  "update  user set city=?, fname=?, sname=?, user_tel=?, date_add=?, login=?, pass=?, email=?,authorities=? where id=?";
+            String sql =  "update user set city=?, fname=?, sname=?, user_tel=?, date_add=?, login=?, pass=?, email=?,authorities=? where id=?";
             PreparedStatement preparedStatement1 =
                     connection.prepareStatement(sql);
             preparedStatement1.setString(1, user.getCity());

@@ -7,6 +7,7 @@ com\termos\config\WebSecurityConfigurerAdapterT.class
 com\termos\TimeUtils.class
 com\termos\config\AuthEntryPoint.class
 com\termos\repository\DatabaseManager.class
+com\termos\repository\OrderRepository.class
 com\termos\model\Order.class
 com\termos\controller\BookController.class
 com\termos\model\User.class
