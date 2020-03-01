@@ -36,9 +36,11 @@ public class BookController {
     Book findA(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            ResultSet rs = connection.prepareStatement("select * from books where book_id='"+id+"'").executeQuery();
-            rs.next();
-            return mapBook(rs);
+            String sql = "select * from books where book_id=?";
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement(sql);
+            preparedStatement.setString(1, id);
+            int rowsAffected = preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
