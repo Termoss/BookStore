@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4429b5fa-604b-4c3f-8623-6f084e755859" name="Default Changelist" comment="Create TimeUtils Class,&#10;Create Con">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_6_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4429b5fa-604b-4c3f-8623-6f084e755859" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/AuthEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/AuthEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/StartBookApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/termos/StartBookApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/termos-bookstore-1.0.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/termos-bookstore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/termos-bookstore.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +120,7 @@
       <workItem from="1582740763569" duration="6118000" />
       <workItem from="1582917420770" duration="719000" />
       <workItem from="1583010576209" duration="5601000" />
-      <workItem from="1583051800121" duration="3405000" />
+      <workItem from="1583051800121" duration="8301000" />
     </task>
     <task id="LOCAL-00001" summary="Pierwszy Commit">
       <created>1578509615018</created>
@@ -263,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580035443838</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Create TimeUtils Class,&#10;Create Con">
+      <created>1583055808879</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583055808880</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +292,8 @@
     <MESSAGE value="Dodanie data.sql" />
     <MESSAGE value="Dodanie create database do data.sql" />
     <MESSAGE value="Update: 1.  all class contains prepare statement,&#10;2. User date convert to timestamp;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: 1.  all class contains prepare statement,&#10;2. User date convert to timestamp;" />
+    <MESSAGE value="Create TimeUtils Class,&#10;Create Con" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create TimeUtils Class,&#10;Create Con" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1582225953526">
@@ -308,12 +308,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="229" y="356" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578508103188" />
-    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583054388168">
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583057200082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1635" y="229" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579118598136" />
     <state x="228" y="181" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1578696703409" />
-    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583054388168" />
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583057200082" />
     <state x="751" y="364" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582225927597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,13 +336,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579291202110" />
-    <state x="373" y="0" key="CommitChangelistDialog2" timestamp="1580052346451">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="511" y="35" key="CommitChangelistDialog2" timestamp="1583055797586">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1396" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579119863817" />
     <state x="373" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580052346451" />
     <state x="419" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578694910878" />
-    <state x="524" y="37" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580049194531" />
+    <state x="511" y="35" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583055797586" />
     <state width="418" height="466" key="DebuggerActiveHint" timestamp="1577378238709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -365,38 +365,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="338" y="416" width="260" height="214" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578511192644" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1583055716041">
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1583059416916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="936" height="251" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579121023653" />
     <state width="1354" height="261" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583022172741" />
     <state width="1323" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580052319694" />
     <state width="1493" height="468" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583055716041" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1583055716040">
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583059416916" />
+    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1583059416914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="936" height="251" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579121023652" />
     <state width="1354" height="261" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583022172741" />
     <state width="1323" height="262" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580052319694" />
     <state width="1493" height="468" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583055716040" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1583055716040">
+    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583059416914" />
+    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1583059416914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="936" height="251" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579121023652" />
     <state width="1354" height="261" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583022172741" />
     <state width="1323" height="262" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580052319694" />
     <state width="1493" height="468" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578697392229" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583055716040" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1583055716041">
+    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583059416914" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1583059416915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="936" height="251" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1579121023652" />
     <state width="1354" height="261" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583022172741" />
     <state width="1323" height="262" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580052319694" />
     <state width="1493" height="468" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578697392230" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583055716041" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583059416915" />
     <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1583055073519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

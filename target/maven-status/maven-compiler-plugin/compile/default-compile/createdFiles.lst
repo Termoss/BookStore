@@ -1,9 +1,12 @@
-com\termos\repository\DatabaseManager.class
+com\termos\config\WebSecurityConfigurerAdapterT$1.class
 com\termos\controller\UserController.class
 com\termos\StartBookApplication.class
+com\termos\model\Book.class
+com\termos\controller\OrderController.class
+com\termos\config\WebSecurityConfigurerAdapterT.class
+com\termos\TimeUtils.class
+com\termos\config\AuthEntryPoint.class
+com\termos\repository\DatabaseManager.class
 com\termos\model\Order.class
 com\termos\controller\BookController.class
-com\termos\model\Book.class
 com\termos\model\User.class
-com\termos\controller\OrderController.class
-com\termos\TimeUtils.class

@@ -73,10 +73,10 @@ public class BookController {
         return null;
     }
     @PutMapping("/books/{id}")
-    Book updateBook(@PathVariable String id,Book book) {
+    Book updateBook(@PathVariable String id,@RequestBody Book book) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            String sql =  "update  books set (title, author,  price, description, rdate) VALUES(?,?,?,?,?) where book_id='"+id+"'";
+            String sql =  "update  books set title=?, author=?,  price=?, description=?, rdate=? where book_id=?";
             PreparedStatement preparedStatement1 =
                     connection.prepareStatement(sql);
             preparedStatement1.setString(1, book.getTitle());
@@ -84,6 +84,7 @@ public class BookController {
             preparedStatement1.setDouble(3, book.getPrice());
             preparedStatement1.setString(4, book.getDescription());
             preparedStatement1.setString(5, book.getrDate());
+            preparedStatement1.setString(6, id);
             int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
@@ -92,13 +93,15 @@ public class BookController {
 
         return null;
     }
-    @DeleteMapping
+    @DeleteMapping("/books/{id}")
     Book deleteBook(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            ResultSet rs = connection.prepareStatement("DELETE * from books where book_id='"+id+"'").executeQuery();
-            rs.next();
-            return mapBook(rs);
+            String sql = "DELETE from books where book_id=?";
+            PreparedStatement preparedStatement1 =
+                    connection.prepareStatement(sql);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
