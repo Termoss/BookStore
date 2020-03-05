@@ -1,0 +1,111 @@
+{
+  "city":"Gdansk",
+  "firstname":"Adam",
+  "surname":"Mito",
+  "usertel":785785785,
+  "login":"AdamM",
+  "pass":"Adam34!",
+  "email":"adam.m@gmail.com",
+  "authorities":"ROLE_USER"
+}
+{
+  "city":"Warszawa",
+  "firstname":"Anna",
+  "surname":"Wito",
+  "usertel":785785678,
+  "login":"AnnaW",
+  "pass":"Anna45!",
+  "email":"anna.w@gmail.com",
+  "authorities":"ROLE_USER"
+}
+
+
+
+{
+  "city":"Wolomin",
+  "firstname":"Damian",
+  "surname":"Cito",
+  "usertel":785785612,
+  "login":"DamianC",
+  "pass":"Damian45!",
+  "email":"damian.c@gmail.com",
+  "authorities":"ROLE_USER"
+}
+
+
+
+
+{
+  "city":"Walbrzych",
+  "firstname":"Nina",
+  "surname":"Sito",
+  "usertel":785785622,
+  "login":"NinaD",
+  "pass":"Nina@#$1!",
+  "email":"nina.d@02.pl",
+  "authorities":"ROLE_USER"}
+
+
+
+{
+  "city":"Wilno",
+  "firstname":"Vito",
+  "surname":"Hito",
+  "usertel":785785633,
+  "login":"VitoH",
+  "pass":"Vito@#$1!",
+  "email":"vito.h@tlen.pl",
+  "authorities":"ROLE_USER"}
+
+
+
+{
+  "city":"toronto",
+  "firstname":"Tim",
+  "surname":"Tito",
+  "usertel":785785644,
+  "login":"TimT",
+  "pass":"agyt@#$1!",
+  "email":"timt@hotmail.com",
+  "authorities":"ROLE_USER"}
+
+
+
+
+
+{
+  "city":"la",
+  "firstname":"Gavin",
+  "surname":"Gito",
+  "usertel":785785655,
+  "login":"TimT",
+  "pass":"acfg@#$1!",
+  "email":"gg@hotmail.com",
+  "authorities":"ROLE_USER"}
+
+{
+  "city":"paris",
+  "firstname":"Adele",
+  "surname":"Aito",
+  "usertel":785785666,
+  "login":"AdeleA",
+  "pass":"los@#$1!",
+  "email":"adele@microsoft.com",
+  "authorities":"ROLE_USER"}
+
+
+
+
+{
+  "city":"Lublin",
+  "firstname":"Tom",
+  "surname":"Fito",
+  "usertel":785785677,
+  "login":"TomF",
+  "pass":"xcv@#$1!",
+  "email":"tt@hotmail.eu",
+  "authorities":"ROLE_USER"}
+
+
+
+

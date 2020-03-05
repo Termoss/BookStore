@@ -11,22 +11,22 @@ public class User {
     private String city;
     @JsonProperty("firstname")
     private String firstName;
-    @JsonProperty("surnname")
-    private String surnName;
+    @JsonProperty("surname")
+    private String surName;
     @JsonProperty("usertel")
     private int userTel;
-    @JsonProperty("addDate")
+    @JsonProperty("regdate")
     private Timestamp regDate;
     private String login;
     private String pass;
     private String email;
     private String authorities;
 
-    public User(String userId, String city, String firstName, String surnName, int userTel, Timestamp regDate, String login, String pass, String email, String authorities) {
+    public User(String userId, String city, String firstName, String surName, int userTel, Timestamp regDate, String login, String pass, String email, String authorities) {
         this.userId = userId;
         this.city = city;
         this.firstName = firstName;
-        this.surnName = surnName;
+        this.surName = surName;
         this.userTel = userTel;
         this.regDate = regDate;
         this.login = login;
@@ -59,12 +59,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getSurnName() {
-        return surnName;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setSurnName(String surnName) {
-        this.surnName = surnName;
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     public int getUserTel() {
@@ -121,7 +121,7 @@ public class User {
                 "userId='" + userId + '\'' +
                 ", city='" + city + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", surnName='" + surnName + '\'' +
+                ", surName='" + surName + '\'' +
                 ", userTel=" + userTel +
                 ", regDate=" + regDate +
                 ", login='" + login + '\'' +

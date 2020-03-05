@@ -2,27 +2,25 @@ package com.termos.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.Date;
+import java.sql.Date;
 
 public class Book {
+    @JsonProperty("bookid")
     private String bookId;
     private String title;
     private String author;
     private double price;
     private String description;
-    @JsonProperty("rdate")
-    private String rDate;
+    @JsonProperty("releasedate")
+    private Date releaseDate;
 
-    public Book(String bookId, String title, String author, double price, String description, String rDate) {
+    public Book(String bookId, String title, String author, double price, String description, Date releaseDate) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.price = price;
         this.description = description;
-        this.rDate = rDate;
+        this.releaseDate = releaseDate;
     }
 
     public String getBookId() {
@@ -65,12 +63,12 @@ public class Book {
         this.description = description;
     }
 
-    public String getrDate() {
-        return rDate;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setrDate(String rDate) {
-        this.rDate = rDate;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     @Override
@@ -81,7 +79,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
-                ", rDate='" + rDate + '\'' +
+                ", releaseDate=" + releaseDate +
                 '}';
     }
 }
