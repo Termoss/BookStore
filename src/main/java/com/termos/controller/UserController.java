@@ -2,8 +2,11 @@ package com.termos.controller;
 
 import com.termos.TimeUtils;
 import com.termos.model.Book;
+import com.termos.model.Order;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.User;
+import com.termos.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.*;
@@ -15,96 +18,36 @@ import java.util.UUID;
 @RestController
 public class UserController {
 
+    @Autowired
+    private UserRepository userRepository;
 
-    // Find
+
+    // FindAll
     @GetMapping("/users")
-    List<User> findAllUsers()  {
-        List<User> list = new ArrayList<>();
-        try {
-            Connection connection = DatabaseManager.connectToDatabase();
-            ResultSet rs = connection.prepareStatement("select * from users").executeQuery();
-            while (rs.next()) {
-                list.add(mapUser(rs));
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return list;
+    List<User> findAll() {
+        return userRepository.findAllUsers();
     }
+
+    //findbyId
     @GetMapping("/users/{id}")
     User findUser(@PathVariable String id) {
-        try {
-            Connection connection = DatabaseManager.connectToDatabase();
-            String sql="select * from users where id=?";
-            PreparedStatement preparedStatement1 =
-                    connection.prepareStatement(sql);
-            preparedStatement1.setString(1, id);
-            int rowsAffected = preparedStatement1.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        return userRepository.findUser(id);
     }
 
-
+    //create
     @PostMapping("/users")
-    public User createUser(@RequestBody User user) {
-        Connection connection = null;
-
-        try {
-            connection = DatabaseManager.connectToDatabase();
-
-            String sql = "INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email,authorities) VALUES(?,?,?,?,?,?,?,?,?,?);";
-                    PreparedStatement preparedStatement =
-                            connection.prepareStatement(sql);
-            preparedStatement.setString(1, UUID.randomUUID().toString());
-            preparedStatement.setString(2, user.getCity());
-            preparedStatement.setString(3, user.getFirstName());
-            preparedStatement.setString(4, user.getSurnName());
-            preparedStatement.setInt(5, user.getUserTel());
-            preparedStatement.setTimestamp(6, TimeUtils.NowTimeStamp());
-            preparedStatement.setString(7, user.getLogin());
-            preparedStatement.setString(8, user.getPass());
-            preparedStatement.setString(9, user.getEmail());
-            preparedStatement.setString(10, user.getAuthorities());
-
-            int rowsAffected = preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-        return null;
+    public User createUser(@RequestBody User user){
+        return userRepository.createUser(user);
     }
+
+    //update
     @PutMapping("/user/{id}")
-    User updateUser(@PathVariable String id, @RequestBody User user) {
-        try {
-            Connection connection = DatabaseManager.connectToDatabase();
-            String sql =  "update user set city=?, fname=?, sname=?, user_tel=?, date_add=?, login=?, pass=?, email=?,authorities=? where id=?";
-            PreparedStatement preparedStatement1 =
-                    connection.prepareStatement(sql);
-            preparedStatement1.setString(1, user.getCity());
-            preparedStatement1.setString(2, user.getFirstName());
-            preparedStatement1.setString(3, user.getSurnName());
-            preparedStatement1.setInt(4, user.getUserTel());
-            preparedStatement1.setTimestamp(5, TimeUtils.NowTimeStamp());
-            preparedStatement1.setString(6, user.getLogin());
-            preparedStatement1.setString(7, user.getPass());
-            preparedStatement1.setString(8, user.getEmail());
-            preparedStatement1.setString(9, user.getAuthorities());
-            preparedStatement1.setString(10,id);
-            int rowsAffected = preparedStatement1.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+    User updateUser(@PathVariable String id,@RequestBody User user){
+        return userRepository.updateUser(id,user);
     }
+
+
+    //delete
     @DeleteMapping("/user/{id}")
     Book deleteBook(@PathVariable String id) {
         try {

@@ -14,14 +14,18 @@ public class Order{
     private double  price;
     private String status;
     private String invoice;
+    private String bookId;
+    private String userId;
 
-    public Order(String orderID, Timestamp orderDate, int quantity, double price, String status, String invoice) {
+    public Order(String orderID, Timestamp orderDate, int quantity, double price, String status, String invoice, String bookId, String userId) {
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.quantity = quantity;
         this.price = price;
         this.status = status;
         this.invoice = invoice;
+        this.bookId = bookId;
+        this.userId = userId;
     }
 
     public String getOrderID() {
@@ -72,6 +76,22 @@ public class Order{
         this.invoice = invoice;
     }
 
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -84,3 +104,12 @@ public class Order{
                 '}';
     }
 }
+
+ this.orderID = orderID;
+         this.orderDate = orderDate;
+         this.quantity = quantity;
+         this.price = price;
+         this.status = status;
+         this.invoice = invoice;
+         this.bookId = bookId;
+         this.userId = userId;
