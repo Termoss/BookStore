@@ -1,0 +1,46 @@
+drop table if exists orders CASCADE;
+drop table if exists books;
+drop table if exists users;
+
+CREATE TABLE users
+(
+    user_id VARCHAR(128) NOT NULL,
+	city VARCHAR(128) NOT NULL,
+	first_name VARCHAR(128) NOT NULL,
+	sur_name VARCHAR(128) NOT NULL,
+	user_tel integer NOT NULL,
+    reg_date TIMESTAMP NULL,
+    login VARCHAR(50) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+	authorities VARCHAR(128) NOT NULL,
+    PRIMARY KEY (user_id)
+);
+select * from users;
+
+CREATE TABLE books
+(
+    book_id VARCHAR(128)  NOT NULL,
+	title VARCHAR(128) NOT NULL,
+	author VARCHAR(128) NOT NULL,
+	price DOUBLE PRECISION NOT NULL,
+	description VARCHAR(128) NOT NULL,
+    release_date DATE NOT NULL,
+    PRIMARY KEY (book_id)
+);
+select * from books;
+
+CREATE TABLE orders
+(
+    order_id VARCHAR(128)  NOT NULL,
+    book_id character varying references books(book_id),
+	user_id character varying references users(user_id),
+	order_date TIMESTAMP NOT NULL,
+	quantity integer NOT NULL,
+	price DOUBLE PRECISION NOT NULL,
+	status VARCHAR(128) NOT NULL,
+    invoice VARCHAR(128)NOT NULL,
+
+    PRIMARY KEY (order_id)
+);
+select * from orders;

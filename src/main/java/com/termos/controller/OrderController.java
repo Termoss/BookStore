@@ -2,9 +2,11 @@ package com.termos.controller;
 
 import com.termos.TimeUtils;
 import com.termos.model.Book;
+import com.termos.repository.BookRepository;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.Order;
 import com.termos.repository.OrderRepository;
+import com.termos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,10 @@ import java.util.UUID;
 public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    private BookRepository bookRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     // FindAll
     @GetMapping("/orders")
@@ -28,37 +34,28 @@ public class OrderController {
     }
 
     //findAll OK
-    @GetMapping("/orders/{id}")
+    @GetMapping("/order/{id}")
     Order findA(@PathVariable String id) {
         return orderRepository.findA(id);
     }
 
     //create OK
-    @PostMapping("/orders")
-    public Order createOrders(@RequestBody Order order){
+    @PostMapping("/order")
+    public Order createOrders(@RequestBody Order order) {
         return orderRepository.createOrders(order);
     }
 
-   //update
-    @PutMapping("/orders/{id}")
-    Order updateOrder(@PathVariable String id,@RequestBody Order order){
-        return orderRepository.updateOrder(id,order);
+    //update
+    @PutMapping("/order/{id}")
+    Order updateOrder(@PathVariable String id, @RequestBody Order order) {
+        return orderRepository.updateOrder(id, order);
     }
 
     //delete
     @DeleteMapping("/order/{id}")
-    public Order deleteOrders(@PathVariable String id){
+    public Order deleteOrders(@PathVariable String id) {
         return orderRepository.deleteOrder(id);
     }
 
-
-        private Order mapOrder(ResultSet rst) throws SQLException {
-        return new Order(rst.getString("order_id"),
-                rst.getTimestamp("order_date"),
-                rst.getInt("quantity"),
-                rst.getDouble("price"),
-                rst.getString("status"),
-                rst.getString("invoice"));
-    }
 
 }

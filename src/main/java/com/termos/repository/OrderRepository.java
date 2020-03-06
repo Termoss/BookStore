@@ -40,19 +40,21 @@ public class OrderRepository {
 
         //findA
         public Order findA(@PathVariable String id) {
+         Order order = null;
             try {
             Connection connection = DatabaseManager.connectToDatabase();
             String sql = "select * from order where order_id=?";
             PreparedStatement preparedStatement =connection.prepareStatement(sql);
             preparedStatement.setString(1,id);
             ResultSet rst = preparedStatement.executeQuery();
-            rst.next();
-            return mapOrder(rst);
+                rst.next();
+            order = mapOrder(rst);
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return order;
     }
 
       //create
@@ -61,15 +63,17 @@ public class OrderRepository {
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = "INSERT INTO orders(order_id, order_date, quantity, price, status, invoice) VALUES(?,?,?,?,?,?);";
+            String sql = "INSERT INTO orders(order_id, book_id, user_id, order_date, quantity, price, status, invoice) VALUES(?,?,?,?,?,?,?,?);";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
             preparedStatement.setString(1, UUID.randomUUID().toString());
-            preparedStatement.setTimestamp(2, TimeUtils.NowTimeStamp());
-            preparedStatement.setInt(3, orders.getQuantity());
-            preparedStatement.setDouble(4, orders.getPrice());
-            preparedStatement.setString(5, orders.getStatus());
-            preparedStatement.setString(6, orders.getInvoice());
+            preparedStatement.setString(2, orders.getBookId());
+            preparedStatement.setString(3, orders.getUserId());
+            preparedStatement.setTimestamp(4, TimeUtils.NowTimeStamp());
+            preparedStatement.setInt(5, orders.getQuantity());
+            preparedStatement.setDouble(6, orders.getPrice());
+            preparedStatement.setString(7, orders.getStatus());
+            preparedStatement.setString(8, orders.getInvoice());
 
             int rowsAffected = preparedStatement.executeUpdate();
 
@@ -83,14 +87,14 @@ public class OrderRepository {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
             String sql = "update  order set  quantity=?, price=?, status=?, invoice=? where id=?";
-            PreparedStatement preparedStatement1 =
+            PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
-            preparedStatement1.setInt(1, orders.getQuantity());
-            preparedStatement1.setDouble(2, orders.getPrice());
-            preparedStatement1.setString(3, orders.getStatus());
-            preparedStatement1.setString(4, orders.getInvoice());
-            preparedStatement1.setString(5,id);
-            int rowsAffected = preparedStatement1.executeUpdate();
+            preparedStatement.setInt(1, orders.getQuantity());
+            preparedStatement.setDouble(2, orders.getPrice());
+            preparedStatement.setString(3, orders.getStatus());
+            preparedStatement.setString(4, orders.getInvoice());
+            preparedStatement.setString(5,id);
+            int rowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -102,10 +106,10 @@ public class OrderRepository {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
             String sql = "DELETE from order where id=?";
-            PreparedStatement preparedStatement1 =
+            PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
-            preparedStatement1.setString(1, id);
-            int rowsAffected = preparedStatement1.executeUpdate();
+            preparedStatement.setString(1, id);
+            int rowsAffected = preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,28 +117,17 @@ public class OrderRepository {
         return null;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private Order mapOrder(ResultSet rst) throws SQLException {//metoda zwraca order ktora wyciegnela z wnetrza rstset
+    private Order mapOrder(ResultSet rst) throws SQLException {
         return new Order(rst.getString("order_id"),
+                rst.getString("bookId"),
+                rst.getString("userId"),
                 rst.getTimestamp("order_date"),
                 rst.getInt("quantity"),
                 rst.getDouble("price"),
                 rst.getString("status"),
                 rst.getString("invoice"));
     }
+
 }
 
 
