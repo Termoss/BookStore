@@ -1,10 +1,10 @@
 package com.termos.repository;
 
 import com.termos.TimeUtils;
-import com.termos.model.Book;
 import com.termos.model.User;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,6 +17,7 @@ import java.util.UUID;
 @Component
 public class UserRepository {
 
+    //findAll
     public List<User> findAllUsers()  {
         List<User> list = new ArrayList<>();
         try {
@@ -32,40 +33,37 @@ public class UserRepository {
 
         return list;
     }
-   public User findUser(@PathVariable String id) {
-        User user = null;
+
+    //findbyID
+    public User findUser(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            String sql="select * from users where user_id=?";
-            PreparedStatement preparedStatement =
+            String sql="select * from users where id=?";
+            PreparedStatement preparedStatement1 =
                     connection.prepareStatement(sql);
-            preparedStatement.setString(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            user = mapUser(resultSet);
+            preparedStatement1.setString(1, id);
+            int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return user;
+        return null;
     }
 
-
-
+    //create
     public User createUser(@RequestBody User user) {
         Connection connection = null;
-
         try {
             connection = DatabaseManager.connectToDatabase();
 
-            String sql = "INSERT INTO users(user_id, city, first_name, sur_name, user_tel, reg_date, login, pass, email,authorities) VALUES(?,?,?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO users(id, city, fname, sname, user_tel, date_add, login, pass, email,authorities) VALUES(?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
             preparedStatement.setString(1, UUID.randomUUID().toString());
             preparedStatement.setString(2, user.getCity());
             preparedStatement.setString(3, user.getFirstName());
-            preparedStatement.setString(4, user.getSurName());
+            preparedStatement.setString(4, user.getSurnName());
             preparedStatement.setInt(5, user.getUserTel());
             preparedStatement.setTimestamp(6, TimeUtils.NowTimeStamp());
             preparedStatement.setString(7, user.getLogin());
@@ -77,27 +75,27 @@ public class UserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
         return null;
     }
-     public User updateUser(@PathVariable String id, @RequestBody User user) {
+    //update
+
+    public User updateUser(@PathVariable String id, @RequestBody User user) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
-            String sql =  "update user set city=?, first_name=?, sur_name=?, user_tel=?, reg_date=?, login=?, pass=?, email=?,authorities=? where id=?";
-            PreparedStatement preparedStatement =
+            String sql =  "update user set city=?, fname=?, sname=?, user_tel=?, date_add=?, login=?, pass=?, email=?,authorities=? where id=?";
+            PreparedStatement preparedStatement1 =
                     connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getCity());
-            preparedStatement.setString(2, user.getFirstName());
-            preparedStatement.setString(3, user.getSurName());
-            preparedStatement.setInt(4, user.getUserTel());
-            preparedStatement.setTimestamp(5, TimeUtils.NowTimeStamp());
-            preparedStatement.setString(6, user.getLogin());
-            preparedStatement.setString(7, user.getPass());
-            preparedStatement.setString(8, user.getEmail());
-            preparedStatement.setString(9, user.getAuthorities());
-            preparedStatement.setString(10,id);
-            int rowsAffected = preparedStatement.executeUpdate();
+            preparedStatement1.setString(1, user.getCity());
+            preparedStatement1.setString(2, user.getFirstName());
+            preparedStatement1.setString(3, user.getSurnName());
+            preparedStatement1.setInt(4, user.getUserTel());
+            preparedStatement1.setTimestamp(5, TimeUtils.NowTimeStamp());
+            preparedStatement1.setString(6, user.getLogin());
+            preparedStatement1.setString(7, user.getPass());
+            preparedStatement1.setString(8, user.getEmail());
+            preparedStatement1.setString(9, user.getAuthorities());
+            preparedStatement1.setString(10,id);
+            int rowsAffected = preparedStatement1.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -106,28 +104,26 @@ public class UserRepository {
         return null;
     }
 
-    public User deleteUser(@PathVariable String id) {
-        try {
-            Connection connection = DatabaseManager.connectToDatabase();
-            String sql = "DELETE from user where id=?";
-            PreparedStatement preparedStatement =
-                    connection.prepareStatement(sql);
-            preparedStatement.setString(1, id);
-            int rowsAffected = preparedStatement.executeUpdate();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        return null;
-    }
+
+
+
+
+
+
+
+
+
+
+
     private User mapUser(ResultSet rs) throws SQLException {
-        return new User(rs.getString("user_id"),
+        return new User(rs.getString("id"),
                 rs.getString("city"),
-                rs.getString("first_name"),
-                rs.getString("sur_name"),
+                rs.getString("fname"),
+                rs.getString("sname"),
                 rs.getInt("user_tel"),
-                rs.getTimestamp("reg_date"),
+                rs.getTimestamp("date_add"),
                 rs.getString("login"),
                 rs.getString("pass"),
                 rs.getString("email"),

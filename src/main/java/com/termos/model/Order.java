@@ -6,51 +6,34 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Order{
-    private String orderId;
-    @JsonProperty("bookid")
-    private String bookId;
-    @JsonProperty("userid")
-    private String userId;
+    @JsonProperty("orderid")
+    private String orderID;
     @JsonProperty("orderdate")
     private Timestamp orderDate;
     private int quantity;
     private double  price;
     private String status;
     private String invoice;
+    private String bookId;
+    private String userId;
 
-    public Order(String orderId, String bookId, String userId, Timestamp orderDate, int quantity, double price, String status, String invoice) {
-        this.orderId = orderId;
-        this.bookId = bookId;
-        this.userId = userId;
+    public Order(String orderID, Timestamp orderDate, int quantity, double price, String status, String invoice, String bookId, String userId) {
+        this.orderID = orderID;
         this.orderDate = orderDate;
         this.quantity = quantity;
         this.price = price;
         this.status = status;
         this.invoice = invoice;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(String bookId) {
         this.bookId = bookId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
     }
 
     public Timestamp getOrderDate() {
@@ -93,12 +76,26 @@ public class Order{
         this.invoice = invoice;
     }
 
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", bookId='" + bookId + '\'' +
-                ", userId='" + userId + '\'' +
+                "orderID='" + orderID + '\'' +
                 ", orderDate=" + orderDate +
                 ", quantity=" + quantity +
                 ", price=" + price +
@@ -107,3 +104,12 @@ public class Order{
                 '}';
     }
 }
+
+ this.orderID = orderID;
+         this.orderDate = orderDate;
+         this.quantity = quantity;
+         this.price = price;
+         this.status = status;
+         this.invoice = invoice;
+         this.bookId = bookId;
+         this.userId = userId;
