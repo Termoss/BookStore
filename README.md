@@ -1,6 +1,6 @@
 # BookStore
 
-Technologies used :
+### Technologies used :
 
 1. Spring Boot 2.1.2.RELEASE
 
@@ -12,7 +12,7 @@ Technologies used :
 
 5. Java 8
 
-# **How to prepare for launch app** 
+### **How to prepare for launch app**
 1. Install PostgresSQL 4.16
 2. Create PostgresSQL database from: 
 src/main/resources/Scripts/SQL scripts.txt
@@ -22,9 +22,9 @@ src/main/java/com/termos/config/DatabaseManager.java
 5. In Postman use Http method with URL
   
 **Example Book, Order, User Jsons in:** src\main\resources\Jsons
-######  **Books,**
 
 **HTTP** Method	URI	Description
+###### **Books,**
 
 **GET**	/books	List all books.
 
