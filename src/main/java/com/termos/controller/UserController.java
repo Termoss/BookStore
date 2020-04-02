@@ -1,13 +1,17 @@
 package com.termos.controller;
 
 import com.termos.TimeUtils;
+import com.termos.config.UserDTO;
 import com.termos.model.Book;
 import com.termos.model.Order;
 import com.termos.repository.DatabaseManager;
 import com.termos.model.User;
 import com.termos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -49,7 +53,7 @@ public class UserController {
 
     //delete
     @DeleteMapping("/user/{id}")
-    Book deleteBook(@PathVariable String id) {
+    User deleteUser(@PathVariable String id) {
         try {
             Connection connection = DatabaseManager.connectToDatabase();
             String sql = "DELETE from user where id=?";
@@ -64,6 +68,46 @@ public class UserController {
 
         return null;
     }
+
+    //register
+    @GetMapping("user/registration")
+    String registrationForm(WebRequest webRequest, Model model) {
+        //Webrequest - Ogólny interfejs dla żądania internetowego. Przeznaczony głównie do ogólnych przechwytywaczy żądań internetowych,
+        // umożliwiając im dostęp do ogólnych metadanych żądania, a nie do faktycznej obsługi żądania.
+        //model- Interfejs specyficzny dla Java-5, który definiuje uchwyt atrybutów modelu. Przeznaczony głównie do dodawania atrybutów
+        // do modelu. Umożliwia dostęp do całego modelu jako java.util.Map.
+
+        UserDTO userDTO = new UserDTO();
+        model.addAttribute("user",userDTO);//dodaje do mapy modeli userow dany userdto ? jak to dziala
+        return "registration";
+    }
+
+    //1)if while regiastering all fields are not empty and not null
+    //public ModelAndView registerUserAccount(
+   //         @ModelAttribute("user") @Valid UserDto accountDto,
+    //        BindingResult result, WebRequest request, Errors errors) {
+  //  ...
+  //  } ---->nie rozumiem po co tutaj widok i model,omijam
+
+    //2)czy emailadress ma poprawny format
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private User mapUser(ResultSet rs) throws SQLException {
         return new User(rs.getString("id"),
                 rs.getString("city"),

@@ -63,7 +63,7 @@ public class UserRepository {
             preparedStatement.setString(1, UUID.randomUUID().toString());
             preparedStatement.setString(2, user.getCity());
             preparedStatement.setString(3, user.getFirstName());
-            preparedStatement.setString(4, user.getSurnName());
+            preparedStatement.setString(4, user.getSurName());
             preparedStatement.setInt(5, user.getUserTel());
             preparedStatement.setTimestamp(6, TimeUtils.NowTimeStamp());
             preparedStatement.setString(7, user.getLogin());
@@ -130,3 +130,4 @@ public class UserRepository {
                 rs.getString("authorities"));
     }
 }
+

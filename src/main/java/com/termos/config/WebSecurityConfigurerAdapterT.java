@@ -23,7 +23,8 @@ public class WebSecurityConfigurerAdapterT extends WebSecurityConfigurerAdapter 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user").password(encoder().encode("$2y$12$81/FXXlZ2APcBseoSKii3unqGEW8VQKzgGcIanMC9Y49Um9TKHhtq")).roles("USER")                .and()
+                .withUser("user").password(passwordEncoder().encode("$2y$12$81/FXXlZ2APcBseoSKii3unqGEW8VQKzgGcIanMC9Y49Um9TKHhtq")).roles("USER")
+                .and()
                 .withUser("admin").password("password1").roles("ADMIN");
 
     }
@@ -40,24 +41,16 @@ public class WebSecurityConfigurerAdapterT extends WebSecurityConfigurerAdapter 
                 .antMatchers("/orders/{id}").hasRole("ADMIN")
                 .antMatchers("/orders/{id}").hasRole("USER")
                 .and()
+                .formLogin()
+                .loginPage("/login")
+                .and()
+                .logout()
+                .and()
                 .httpBasic(); }
 
 
     @Bean
-    public PasswordEncoder encoder() {
-        return new PasswordEncoder() {
-            @Override
-            public String encode(CharSequence charSequence) {
-                return charSequence.toString();
-            }
-
-            @Override
-            public boolean matches(CharSequence charSequence, String s) {
-                return charSequence.toString().equals(s);
-            }
-
-        };
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
-
-
-}
+    }

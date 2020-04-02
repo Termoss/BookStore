@@ -103,13 +103,13 @@ public class Order{
                 ", invoice='" + invoice + '\'' +
                 '}';
     }
-}
 
- this.orderID = orderID;
-         this.orderDate = orderDate;
-         this.quantity = quantity;
-         this.price = price;
-         this.status = status;
-         this.invoice = invoice;
-         this.bookId = bookId;
-         this.userId = userId;
+ //this.orderID = orderID;
+    //     this.orderDate = orderDate;
+      //   this.quantity = quantity;
+        // this.price = price;
+         //this.status = status;
+        // this.invoice = invoice;
+         //this.bookId = bookId;
+         //this.userId = userId;
+         }

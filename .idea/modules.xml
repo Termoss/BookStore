@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/termos-bookstore.iml" filepath="$PROJECT_DIR$/termos-bookstore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BookStore2803.iml" filepath="$PROJECT_DIR$/BookStore2803.iml" />
     </modules>
   </component>
 </project>

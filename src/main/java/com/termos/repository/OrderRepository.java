@@ -128,6 +128,15 @@ public class OrderRepository {
                 rst.getString("invoice"));
     }
 
+
+    //    @JsonProperty("bookid")
+    //    private String bookId;
+    //    private String title;
+    //    private String author;
+    //    private double price;
+    //    private String description;
+    //    @JsonProperty("releasedate")
+    //    private Date releaseDate;
 }
 
 

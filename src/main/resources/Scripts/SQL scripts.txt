@@ -11,7 +11,7 @@ CREATE TABLE users
 	user_tel integer NOT NULL,
     reg_date TIMESTAMP NULL,
     login VARCHAR(50) NOT NULL,
-    pass VARCHAR(50) NOT NULL,
+    pass VARCHAR(60) NOT NULL,
     email VARCHAR(128) NOT NULL,
 	authorities VARCHAR(128) NOT NULL,
     PRIMARY KEY (user_id)
