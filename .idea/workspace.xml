@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7dfd682-0a33-443b-bc9c-342adcd89120" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BookStore2803.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValidation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordValidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/RegisterUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Scripts/SQL scripts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Scripts/SQL scripts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/termos/StartBookApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/termos-bookstore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/termos-bookstore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/RegisterUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/RegisterUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +12,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1ZzSclYGyDNi3LAmX6kHCptFZnq" />
   <component name="ProjectViewState">
@@ -69,17 +45,45 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585840510826</updated>
-      <workItem from="1585840519822" duration="305000" />
+      <workItem from="1585840519822" duration="873000" />
     </task>
+    <task id="LOCAL-00001" summary="Created part of registration and login service.">
+      <created>1585841056551</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585841056551</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created part of registration and login service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created part of registration and login service." />
   </component>
   <component name="WindowStateProjectService">
     <state x="272" y="0" key="CommitChangelistDialog2" timestamp="1585841030732">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="272" y="0" key="CommitChangelistDialog2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841030732" />
+    <state x="129" y="55" key="MergeDialog" timestamp="1585841304179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="55" key="MergeDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841304179" />
+    <state x="395" y="80" key="MultipleFileMergeDialog" timestamp="1585841304206">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="395" y="80" key="MultipleFileMergeDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841304206" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585841066799">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841066799" />
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585841087502">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841087502" />
   </component>
 </project>
