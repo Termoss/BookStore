@@ -87,7 +87,7 @@ public class UserRepository {
                     connection.prepareStatement(sql);
             preparedStatement1.setString(1, user.getCity());
             preparedStatement1.setString(2, user.getFirstName());
-            preparedStatement1.setString(3, user.getSurnName());
+            preparedStatement1.setString(3, user.getSurName());
             preparedStatement1.setInt(4, user.getUserTel());
             preparedStatement1.setTimestamp(5, TimeUtils.NowTimeStamp());
             preparedStatement1.setString(6, user.getLogin());
@@ -103,20 +103,6 @@ public class UserRepository {
 
         return null;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private User mapUser(ResultSet rs) throws SQLException {
         return new User(rs.getString("id"),
                 rs.getString("city"),

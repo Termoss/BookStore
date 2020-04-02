@@ -8,24 +8,24 @@ import java.time.LocalDate;
 public class Order{
     @JsonProperty("orderid")
     private String orderID;
+    private String bookId;
+    private String userId;
     @JsonProperty("orderdate")
     private Timestamp orderDate;
     private int quantity;
     private double  price;
     private String status;
     private String invoice;
-    private String bookId;
-    private String userId;
 
-    public Order(String orderID, Timestamp orderDate, int quantity, double price, String status, String invoice, String bookId, String userId) {
+    public Order(String orderID, String bookId, String userId, Timestamp orderDate, int quantity, double price, String status, String invoice) {
         this.orderID = orderID;
+        this.bookId = bookId;
+        this.userId = userId;
         this.orderDate = orderDate;
         this.quantity = quantity;
         this.price = price;
         this.status = status;
         this.invoice = invoice;
-        this.bookId = bookId;
-        this.userId = userId;
     }
 
     public String getOrderID() {
@@ -34,6 +34,22 @@ public class Order{
 
     public void setOrderID(String orderID) {
         this.orderID = orderID;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Timestamp getOrderDate() {
@@ -76,26 +92,12 @@ public class Order{
         this.invoice = invoice;
     }
 
-    public String getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     @Override
     public String toString() {
         return "Order{" +
                 "orderID='" + orderID + '\'' +
+                ", bookId='" + bookId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", orderDate=" + orderDate +
                 ", quantity=" + quantity +
                 ", price=" + price +
@@ -103,13 +105,4 @@ public class Order{
                 ", invoice='" + invoice + '\'' +
                 '}';
     }
-
- //this.orderID = orderID;
-    //     this.orderDate = orderDate;
-      //   this.quantity = quantity;
-        // this.price = price;
-         //this.status = status;
-        // this.invoice = invoice;
-         //this.bookId = bookId;
-         //this.userId = userId;
-         }
+}
