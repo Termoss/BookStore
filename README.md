@@ -6,14 +6,14 @@
 
 2. Spring 5.1.4.RELEASE
 
-3. postgresql  4.16
+3. postgresql  12.2
 
 4. Maven 2.22.0
 
 5. Java 8
 
 ### **How to prepare for launch app**
-1. Install PostgresSQL 4.16
+1. Install PostgresSQL >=12.2
 2. Create PostgresSQL database from: 
 src/main/resources/Scripts/SQL scripts.txt
 3. Fill in the information about the created Database in DatabaseManager 
