@@ -1,20 +1,20 @@
 {
   "city":"Gdansk",
-  "firstname":"Adam",
-  "surname":"Mito",
-  "usertel":785785785,
+  "first_name":"Adam",
+  "sur_name":"Mito",
+  "user_tel":785785785,
   "login":"AdamM",
-  "pass":"Adam34!",
+  "password":"Adam34!",
   "email":"adam.m@gmail.com",
   "authorities":"ROLE_USER"
 }
 {
   "city":"Warszawa",
-  "firstname":"Anna",
-  "surname":"Wito",
-  "usertel":785785678,
+  "first_name":"Anna",
+  "sur_name":"Wito",
+  "user_tel":785785678,
   "login":"AnnaW",
-  "pass":"Anna45!",
+  "password":"Anna45!",
   "email":"anna.w@gmail.com",
   "authorities":"ROLE_USER"
 }
@@ -23,11 +23,11 @@
 
 {
   "city":"Wolomin",
-  "firstname":"Damian",
-  "surname":"Cito",
+  "first_name":"Damian",
+  "sur_name":"Cito",
   "usertel":785785612,
   "login":"DamianC",
-  "pass":"Damian45!",
+  "password":"Damian45!",
   "email":"damian.c@gmail.com",
   "authorities":"ROLE_USER"
 }
@@ -37,11 +37,11 @@
 
 {
   "city":"Walbrzych",
-  "firstname":"Nina",
-  "surname":"Sito",
+  "first_name":"Nina",
+  "sur_name":"Sito",
   "usertel":785785622,
   "login":"NinaD",
-  "pass":"Nina@#$1!",
+  "password":"Nina@#$1!",
   "email":"nina.d@02.pl",
   "authorities":"ROLE_USER"}
 
@@ -49,11 +49,11 @@
 
 {
   "city":"Wilno",
-  "firstname":"Vito",
-  "surname":"Hito",
-  "usertel":785785633,
+  "first_name":"Vito",
+  "sur_name":"Hito",
+  "user_tel":785785633,
   "login":"VitoH",
-  "pass":"Vito@#$1!",
+  "password":"Vito@#$1!",
   "email":"vito.h@tlen.pl",
   "authorities":"ROLE_USER"}
 
@@ -61,11 +61,11 @@
 
 {
   "city":"toronto",
-  "firstname":"Tim",
-  "surname":"Tito",
-  "usertel":785785644,
+  "first_name":"Tim",
+  "sur_name":"Tito",
+  "user_tel":785785644,
   "login":"TimT",
-  "pass":"agyt@#$1!",
+  "password":"agyt@#$1!",
   "email":"timt@hotmail.com",
   "authorities":"ROLE_USER"}
 
@@ -75,21 +75,21 @@
 
 {
   "city":"la",
-  "firstname":"Gavin",
-  "surname":"Gito",
-  "usertel":785785655,
+  "first_name":"Gavin",
+  "sur_name":"Gito",
+  "user_tel":785785655,
   "login":"TimT",
-  "pass":"acfg@#$1!",
+  "password":"acfg@#$1!",
   "email":"gg@hotmail.com",
   "authorities":"ROLE_USER"}
 
 {
   "city":"paris",
-  "firstname":"Adele",
-  "surname":"Aito",
-  "usertel":785785666,
+  "first_name":"Adele",
+  "sur_name":"Aito",
+  "user_tel":785785666,
   "login":"AdeleA",
-  "pass":"los@#$1!",
+  "password":"los@#$1!",
   "email":"adele@microsoft.com",
   "authorities":"ROLE_USER"}
 
@@ -98,11 +98,11 @@
 
 {
   "city":"Lublin",
-  "firstname":"Tom",
-  "surname":"Fito",
-  "usertel":785785677,
+  "first_name":"Tom",
+  "sur_name":"Fito",
+  "user_tel":785785677,
   "login":"TomF",
-  "pass":"xcv@#$1!",
+  "password":"xcv@#$1!",
   "email":"tt@hotmail.eu",
   "authorities":"ROLE_USER"}
 

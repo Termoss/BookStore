@@ -6,11 +6,13 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Order{
-    @JsonProperty("orderid")
+    @JsonProperty("order_id")
     private String orderID;
+    @JsonProperty("book_id")
     private String bookId;
+    @JsonProperty("user_id")
     private String userId;
-    @JsonProperty("orderdate")
+    @JsonProperty("order_date")
     private Timestamp orderDate;
     private int quantity;
     private double  price;

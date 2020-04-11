@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.sql.Date;
 
 public class Book {
-    @JsonProperty("bookid")
+    @JsonProperty("book_id")
     private String bookId;
     private String title;
     private String author;
     private double price;
     private String description;
-    @JsonProperty("releasedate")
+    @JsonProperty("release_date")
     private Date releaseDate;
 
     public Book(String bookId, String title, String author, double price, String description, Date releaseDate) {

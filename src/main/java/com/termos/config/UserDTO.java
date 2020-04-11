@@ -4,6 +4,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.security.Timestamp;
 
+@PasswordMatches
 public class UserDTO {
 
     @NotNull
@@ -35,15 +36,14 @@ public class UserDTO {
     @NotEmpty
     private String login;
 
-    @PasswordValidator
+
+
     @NotNull
     @NotEmpty
-    private String pass;
+    private String password;
     private String matchingPassword;
 
-    //matching password nie ma w zadnej innej klasie ani w postgresie!!!
-
-    @EmailValidation
+    @EmailValid
     @NotNull
     @NotEmpty
     private String email;
@@ -52,16 +52,9 @@ public class UserDTO {
     @NotEmpty
     private String authorities;
 
+
     public String getUserId() {
         return userId;
-    }
-
-    public String getMatchingPassword() {
-        return matchingPassword;
-    }
-
-    public void setMatchingPassword(String matchingPassword) {
-        this.matchingPassword = matchingPassword;
     }
 
     public void setUserId(String userId) {
@@ -116,12 +109,20 @@ public class UserDTO {
         this.login = login;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMatchingPassword() {
+        return matchingPassword;
+    }
+
+    public void setMatchingPassword(String matchingPassword) {
+        this.matchingPassword = matchingPassword;
     }
 
     public String getEmail() {

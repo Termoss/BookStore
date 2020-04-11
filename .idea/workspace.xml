@@ -1,18 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7dfd682-0a33-443b-bc9c-342adcd89120" name="Default Changelist" comment="">
+    <list default="true" id="f7dfd682-0a33-443b-bc9c-342adcd89120" name="Default Changelist" comment="Created part of registration and login service.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordMatchesValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/UserServiceinterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore2803.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore2803.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/EmailValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordValidate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/PasswordMatches.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/RegisterUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/RegisterUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/config/WebSecurityConfigurerAdapterT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/RegistrationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/DatabaseManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/termos/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/termos/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Jsons/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Jsons/Books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Jsons/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Jsons/Users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Scripts/SQL scripts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Scripts/SQL scripts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="books: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="orders: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - termos_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="termos_store: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="users: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1ZzSclYGyDNi3LAmX6kHCptFZnq" />
   <component name="ProjectViewState">
@@ -21,10 +142,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.capture" />
   </component>
   <component name="RunManager">
     <configuration name="StartBookApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -34,6 +165,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.21406491" />
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,7 +189,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585840510826</updated>
-      <workItem from="1585840519822" duration="873000" />
+      <workItem from="1585840519822" duration="7363000" />
+      <workItem from="1585991447710" duration="32927000" />
+      <workItem from="1586367445316" duration="6209000" />
+      <workItem from="1586519916163" duration="4917000" />
+      <workItem from="1586536568734" duration="7117000" />
     </task>
     <task id="LOCAL-00001" summary="Created part of registration and login service.">
       <created>1585841056551</created>
@@ -54,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585841056551</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created part of registration and login service.">
+      <created>1585841444463</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585841444463</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,10 +220,113 @@
     <option name="LAST_COMMIT_MESSAGE" value="Created part of registration and login service." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="272" y="0" key="CommitChangelistDialog2" timestamp="1585841030732">
+    <state x="275" y="22" key="#SQL_Dialects" timestamp="1586099148471">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="272" y="0" key="CommitChangelistDialog2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841030732" />
+    <state x="275" y="22" key="#SQL_Dialects/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586099148471" />
+    <state x="413" y="119" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1585846171550">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585846171550" />
+    <state x="335" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586118886226">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="335" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586099058858" />
+    <state x="335" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586118886226" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1586197651396">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586197651396" />
+    <state x="479" y="249" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586375201066">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="249" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586375201066" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586584947665">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586195021640" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1586584947665" />
+    <state x="272" y="0" key="CommitChangelistDialog2" timestamp="1586587569535">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="272" y="0" key="CommitChangelistDialog2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586189893204" />
+    <state x="272" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586587569535" />
+    <state x="463" y="65" key="FileChooserDialogImpl" timestamp="1586458158638">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="65" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586458158638" />
+    <state width="1323" height="210" key="GridCell.Tab.0.bottom" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096225" />
+    <state width="1323" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091979" />
+    <state width="1323" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.0.center" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.center/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096222" />
+    <state width="1323" height="210" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091977" />
+    <state width="1323" height="210" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.0.left" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.left/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096221" />
+    <state width="1323" height="210" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091976" />
+    <state width="1323" height="210" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.0.right" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.right/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096223" />
+    <state width="1323" height="210" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091978" />
+    <state width="1323" height="210" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.1.bottom" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.bottom/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096229" />
+    <state width="1323" height="210" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091982" />
+    <state width="1323" height="210" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.1.center" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.center/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096227" />
+    <state width="1323" height="210" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091980" />
+    <state width="1323" height="210" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.1.left" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.left/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096226" />
+    <state width="1323" height="210" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091979" />
+    <state width="1323" height="210" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="210" key="GridCell.Tab.1.right" timestamp="1586584892294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.1.right/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586196096229" />
+    <state width="1323" height="210" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586541091981" />
+    <state width="1323" height="210" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586584892294" />
+    <state width="1323" height="128" key="GridCell.Tab.2.bottom" timestamp="1586270416313">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="196" key="GridCell.Tab.2.bottom/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586105813331" />
+    <state width="1323" height="128" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586270416313" />
+    <state width="1323" height="128" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586119827498" />
+    <state width="1323" height="128" key="GridCell.Tab.2.center" timestamp="1586270416305">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="196" key="GridCell.Tab.2.center/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586105813328" />
+    <state width="1323" height="128" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586270416305" />
+    <state width="1323" height="128" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1586119827498" />
+    <state width="1323" height="128" key="GridCell.Tab.2.left" timestamp="1586270416305">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="196" key="GridCell.Tab.2.left/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586105813327" />
+    <state width="1323" height="128" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586270416305" />
+    <state width="1323" height="128" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1586119827498" />
+    <state width="1323" height="128" key="GridCell.Tab.2.right" timestamp="1586270416313">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="196" key="GridCell.Tab.2.right/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586105813329" />
+    <state width="1323" height="128" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586270416313" />
+    <state width="1323" height="128" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1586119827498" />
     <state x="129" y="55" key="MergeDialog" timestamp="1585841304179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -77,13 +335,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="395" y="80" key="MultipleFileMergeDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841304206" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585841066799">
+    <state x="348" y="63" key="NewModule_or_Project.wizard" timestamp="1586458173973">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841066799" />
+    <state x="348" y="63" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1586458173973" />
+    <state x="169" y="12" width="1040" height="708" key="SettingsEditor" timestamp="1586117971391">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="169" y="12" width="1040" height="601" key="SettingsEditor/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586103637287" />
+    <state x="169" y="12" width="1040" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586117971391" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585841449923">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841449923" />
+    <state x="644" y="11" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1586587241820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="5" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586540553620" />
+    <state x="644" y="11" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1586587241820" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586517764005">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585991446826" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586517764005" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586464433708" />
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585841087502">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1585841087502" />
+    <state x="244" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586118366877">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="244" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1586118366877" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586538755736">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-1680.-277.1680.1010@0.0.1366.728" timestamp="1586194117805" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1586538755736" />
   </component>
 </project>

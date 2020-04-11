@@ -2,27 +2,39 @@ package com.termos.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.termos.config.PasswordMatches;
+import com.termos.config.UserDTO;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class User {
+    @JsonProperty("user_id")
     private String userId;
+    @JsonProperty("city")
     private String city;
-    @JsonProperty("firstname")
+    @JsonProperty("first_name")
     private String firstName;
-    @JsonProperty("surname")
+    @JsonProperty("sur_name")
     private String surName;
-    @JsonProperty("usertel")
+    @JsonProperty("user_tel")
     private int userTel;
-    @JsonProperty("regdate")
+    @JsonProperty("reg_date")
     private Timestamp regDate;
+    @JsonProperty("login")
     private String login;
-    private String pass;
+    @JsonProperty("password")
+    private String password;
+    @JsonProperty("email")
     private String email;
+    @JsonProperty("authorities")
     private String authorities;
 
-    public User(String userId, String city, String firstName, String surName, int userTel, Timestamp regDate, String login, String pass, String email, String authorities) {
+    public User() {
+    }
+
+    public User(String userId, String city, String firstName, String surName, int userTel, Timestamp regDate, String login, String password, String email, String authorities) {
         this.userId = userId;
         this.city = city;
         this.firstName = firstName;
@@ -30,7 +42,7 @@ public class User {
         this.userTel = userTel;
         this.regDate = regDate;
         this.login = login;
-        this.pass = pass;
+        this.password = password;
         this.email = email;
         this.authorities = authorities;
     }
@@ -91,12 +103,12 @@ public class User {
         this.login = login;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -115,6 +127,7 @@ public class User {
         this.authorities = authorities;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -125,9 +138,11 @@ public class User {
                 ", userTel=" + userTel +
                 ", regDate=" + regDate +
                 ", login='" + login + '\'' +
-                ", pass='" + pass + '\'' +
+                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", authorities='" + authorities + '\'' +
                 '}';
     }
+
+
 }

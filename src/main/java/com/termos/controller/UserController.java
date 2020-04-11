@@ -1,62 +1,64 @@
 package com.termos.controller;
 
-import com.termos.TimeUtils;
 import com.termos.config.UserDTO;
-import com.termos.model.Book;
-import com.termos.model.Order;
-import com.termos.repository.DatabaseManager;
 import com.termos.model.User;
 import com.termos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.ModelAndView;
 
+import javax.sql.DataSource;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 public class UserController {
 
-    @Autowired
+    private DataSource dataSource;
     private UserRepository userRepository;
 
+    @Autowired
+    public UserController(DataSource dataSource, UserRepository userRepository) {
+        this.dataSource = dataSource;
+        this.userRepository = userRepository;
+    }
 
     // FindAll
     @GetMapping("/users")
-    List<User> findAll() {
-        return userRepository.findAllUsers();
+    ResponseEntity <List<User>> findAll() {
+        return ResponseEntity.ok(userRepository.findAllUsers());
     }
 
     //findbyId
     @GetMapping("/users/{id}")
     User findUser(@PathVariable String id) {
         return userRepository.findUser(id);
+
     }
 
     //create
     @PostMapping("/users")
     public User createUser(@RequestBody User user){
+
         return userRepository.createUser(user);
     }
 
     //update
-    @PutMapping("/user/{id}")
+    @PutMapping("/users/{id}")
     User updateUser(@PathVariable String id,@RequestBody User user){
         return userRepository.updateUser(id,user);
     }
 
 
     //delete
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/users/{id}")
     User deleteUser(@PathVariable String id) {
         try {
-            Connection connection = DatabaseManager.connectToDatabase();
-            String sql = "DELETE from user where id=?";
+            Connection connection = dataSource.getConnection();
+            String sql = "DELETE from users where user_id=?";
             PreparedStatement preparedStatement1 =
                     connection.prepareStatement(sql);
             preparedStatement1.setString(1, id);
@@ -70,53 +72,22 @@ public class UserController {
     }
 
     //register
-    @GetMapping("user/registration")
+    @GetMapping("users/registration")
     String registrationForm(WebRequest webRequest, Model model) {
-        //Webrequest - Ogólny interfejs dla żądania internetowego. Przeznaczony głównie do ogólnych przechwytywaczy żądań internetowych,
-        // umożliwiając im dostęp do ogólnych metadanych żądania, a nie do faktycznej obsługi żądania.
-        //model- Interfejs specyficzny dla Java-5, który definiuje uchwyt atrybutów modelu. Przeznaczony głównie do dodawania atrybutów
-        // do modelu. Umożliwia dostęp do całego modelu jako java.util.Map.
-
         UserDTO userDTO = new UserDTO();
-        model.addAttribute("user",userDTO);//dodaje do mapy modeli userow dany userdto ? jak to dziala
+        model.addAttribute("user",userDTO);
         return "registration";
     }
-
-    //1)if while regiastering all fields are not empty and not null
-    //public ModelAndView registerUserAccount(
-   //         @ModelAttribute("user") @Valid UserDto accountDto,
-    //        BindingResult result, WebRequest request, Errors errors) {
-  //  ...
-  //  } ---->nie rozumiem po co tutaj widok i model,omijam
-
-    //2)czy emailadress ma poprawny format
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private User mapUser(ResultSet rs) throws SQLException {
         return new User(rs.getString("id"),
                 rs.getString("city"),
-                rs.getString("fname"),
-                rs.getString("sname"),
+                rs.getString("first_name"),
+                rs.getString("sur_name"),
                 rs.getInt("user_tel"),
-                rs.getTimestamp("date_add"),
+                rs.getTimestamp("reg_date"),
                 rs.getString("login"),
-                rs.getString("pass"),
+                rs.getString("password"),
                 rs.getString("email"),
                 rs.getString("authorities"));
     }

@@ -16,19 +16,19 @@ public class BookController {
         return bookRepository.findBooks();
 
     }
-    @GetMapping("/book/{id}")
+    @GetMapping("/books/{id}")
     Book findBook(@PathVariable String id) {
         return  bookRepository.findBook(id);
     }
-    @PostMapping("/book")
+    @PostMapping("/books")
     public Book createUser(@RequestBody Book book) {
         return bookRepository.createBook(book);
     }
-    @PutMapping("/book/{id}")
+    @PutMapping("/books/{id}")
     Book updateBook(@PathVariable String id,@RequestBody Book book) {
         return bookRepository.updateBook(id,book);
     }
-    @DeleteMapping("/book/{id}")
+    @DeleteMapping("/books/{id}")
     Book deleteBook(@PathVariable String id) {
         return bookRepository.deleteBook(id);
     }

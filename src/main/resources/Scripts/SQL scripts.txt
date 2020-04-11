@@ -4,14 +4,14 @@ drop table if exists users;
 
 CREATE TABLE users
 (
-    user_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128)  NOT NULL,
 	city VARCHAR(128) NOT NULL,
 	first_name VARCHAR(128) NOT NULL,
 	sur_name VARCHAR(128) NOT NULL,
 	user_tel integer NOT NULL,
     reg_date TIMESTAMP NULL,
     login VARCHAR(50) NOT NULL,
-    pass VARCHAR(60) NOT NULL,
+    password VARCHAR(60) NOT NULL,
     email VARCHAR(128) NOT NULL,
 	authorities VARCHAR(128) NOT NULL,
     PRIMARY KEY (user_id)

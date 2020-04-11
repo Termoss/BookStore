@@ -3,71 +3,71 @@
   "author":"Tom slick",
   "price":45.90,
   "description":"biography",
-  "releasedate":"2000-01-17"
+  "release_date":"2000-01-17"
 }
 {
   "title":"LOTR",
   "author":"JRR Tolkien",
   "price":20.00,
   "description":"fantasy",
-  "releasedate":"1959-01-01"
+  "release_date":"1959-01-01"
 }
 {
   "title":"Metro 2033",
   "author":"Dmitrij Głuchowski",
   "price":19.90,
   "description":"fantasy",
-  "releasedate":"2005-01-01"
+  "release_date":"2005-01-01"
 }
 {
   "title":"Pol-eng dictionary",
   "author":"Pogonowski Iwo Cyprian",
   "price":60.90,
   "description":"study",
-  "releasedate":"2006-01-11"
+  "release_date":"2006-01-11"
 }
 {
   "title":"Annie",
   "author":"Dana Cerny",
   "price":35.90,
   "description":"fantasy",
-  "releasedate":"2007-03-17"
+  "release_date":"2007-03-17"
 }
 {
   "title": "The dogs",
   "author": "Anna wawrick",
   "price": 29.90,
   "description": "diy",
-  "releasedate": "2008-01-17"
+  "release_date": "2008-01-17"
 
 }
 {
   "title":"Chait",
-  "author":"JAden Smith",
+  "author":"Jaden Smith",
   "price":44.90,
   "description":"diy",
-  "releasedate":"2009-01-01"
+  "release_date":"2009-01-01"
 }
 {
   "title":"Silmalirion",
   "author":"JRR Tolkien",
   "price":44.90,
   "description":"fantasy",
-  "releasedate":"2010-01-11"
+  "release_date":"2010-01-11"
 }
 {
   "title":"Drugon",
   "author":"Jess tres",
   "price":36.90,
   "description":"science-fiction",
-  "releasedate":"2003-03-17"
+  "release_date":"2003-03-17"
 }
 {
   "title": "Termos",
   "author": "Tomasz Czerwiec",
   "price": 29.90,
   "description": "biography",
-  "releasedate": "2008-01-17"
+  "release_date": "2008-01-17"
 
 }
 {
@@ -75,6 +75,6 @@
   "author": "Dorota Granicka ",
   "price": 79.90,
   "description": "biography",
-  "releasedate": "2011-01-17"
+  "release_date": "2011-01-17"
 
 }

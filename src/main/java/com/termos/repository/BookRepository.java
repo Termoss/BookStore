@@ -4,6 +4,7 @@ import com.termos.model.Book;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,12 @@ import java.util.UUID;
 @Component
 public class BookRepository {
 
+    private DataSource dataSource;
+
     public List<Book> findBooks()  {
         List<Book> list = new ArrayList<>();
         try {
-            Connection connection = DatabaseManager.connectToDatabase();
+            Connection connection = dataSource.getConnection();
             ResultSet rs = connection.prepareStatement("select * from books").executeQuery();
             while (rs.next()) {
                 list.add(mapBook(rs));
@@ -33,7 +36,7 @@ public class BookRepository {
     public Book findBook(@PathVariable String id) {
         Book book = null;
         try {
-            Connection connection = DatabaseManager.connectToDatabase();
+            Connection connection = dataSource.getConnection();
             String sql = "select * from books where book_id=?";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
@@ -55,7 +58,7 @@ public class BookRepository {
         Connection connection = null;
 
         try {
-            connection = DatabaseManager.connectToDatabase();
+            connection = dataSource.getConnection();
 
             String sql = "INSERT INTO books(book_id, title, author,  price, description, release_date) VALUES(?,?,?,?,?,?);";
             PreparedStatement preparedStatement =
@@ -80,7 +83,7 @@ public class BookRepository {
 
     public Book updateBook(@PathVariable String id,@RequestBody Book book) {
         try {
-            Connection connection = DatabaseManager.connectToDatabase();
+            Connection connection = dataSource.getConnection();
             String sql =  "update  books set title=?, author=?,  price=?, description=?, release_date=? where book_id=?";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
@@ -101,7 +104,7 @@ public class BookRepository {
     public @DeleteMapping("/books/{id}")
     Book deleteBook(@PathVariable String id) {
         try {
-            Connection connection = DatabaseManager.connectToDatabase();
+            Connection connection = dataSource.getConnection();
             String sql = "DELETE from books where book_id=?";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);

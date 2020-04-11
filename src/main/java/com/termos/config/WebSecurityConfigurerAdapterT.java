@@ -25,7 +25,7 @@ public class WebSecurityConfigurerAdapterT extends WebSecurityConfigurerAdapter 
         auth.inMemoryAuthentication()
                 .withUser("user").password(passwordEncoder().encode("$2y$12$81/FXXlZ2APcBseoSKii3unqGEW8VQKzgGcIanMC9Y49Um9TKHhtq")).roles("USER")
                 .and()
-                .withUser("admin").password("password1").roles("ADMIN");
+                .withUser("admin").password(passwordEncoder().encode("password1")).roles("ADMIN");
 
     }
 
@@ -40,6 +40,7 @@ public class WebSecurityConfigurerAdapterT extends WebSecurityConfigurerAdapter 
                 .antMatchers("/orders").hasRole("ADMIN")
                 .antMatchers("/orders/{id}").hasRole("ADMIN")
                 .antMatchers("/orders/{id}").hasRole("USER")
+                .antMatchers("/users/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login")
